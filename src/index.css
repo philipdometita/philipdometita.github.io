@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Quicksand-Light';
+  src: local('Quicksand-Light'), url(./assets/fonts/Quicksand-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Quicksand-Regular';
+  src: local('Quicksand-Regular'), url(./assets/fonts/Quicksand-Regular.ttf) format('truetype');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +15,217 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #d8c4ac;
+}
+
+h1 {
+  font-family: 'Quicksand-Regular', sans-serif;
+}
+
+h3 {
+  font-family: 'Quicksand-Light', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Home {
+  display: flex;
+  flex-direction: column;
+}
+
+.Title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./assets/paint_pots.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.name {
+  color: white;
+  font-size: 3rem;
+  font-family: 'Quicksand-Regular', sans-serif;
+  font-weight: bold;
+}
+
+.paintPotsPic {
+  width: 100%;
+  height: 100%;
+}
+
+.profPic {
+  height: 25rem;
+  width: auto;
+  border-radius: 50%;
+}
+
+.AboutMe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  position: relative;
+}
+
+/* check width for mobile */
+.AboutMe--content {
+  display: inline-block;
+  text-align: left;
+  max-width: 40%;
+  border: 1px #9d8667 solid;
+  border-radius: 5px;
+  padding: 2rem;
+  flex-wrap: wrap-reverse;
+}
+
+.laptopAndHeadphone {
+  height: 15rem;
+  width: auto;
+  max-width: 100%;
+  margin-right: 3rem;
+}
+
+hr {
+  width: 100%;
+  border-color: #9d8667;
+}
+
+.navbar {
+  background-image: linear-gradient(to right, #d8c4ac, #9d8667);
+}
+
+
+.PDlogo {
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+.ContactMe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 95vh;
+}
+
+.ContactMe--content {
+  display: inline-block;
+  text-align: left;
+  max-width: 25rem;
+  border: 1px #9d8667 solid;
+  border-radius: 5px;
+  padding: 2rem;
+}
+
+.ContactMe--email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ContactMe--email p {
+  padding-left: 1rem;
+}
+
+.ContactMe--email img {
+  height: 3rem;
+  width: auto;
+}
+
+.PPM {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.PPM--Title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}
+
+.PPM--Title--img {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.PPM--Title p {
+  max-width: 35%;
+}
+
+.PPM--Body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+.PPM--Inspiration {
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.PPM--Inspiration p {
+  max-width: 65%;
+}
+
+.PPM--Inspiration img {
+  margin-left: auto;
+}
+
+.PPM--HowItWorks {
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap-reverse;
+}
+
+.PPM--HowItWorks img {
+  margin-right: 2rem;
+}
+
+.PPM--HowItWorks p {
+  max-width: 34%;
+  align-self: center;
+}
+
+.PPM--Git {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  border: 1px #9d8667 solid;
+  border-radius: 5px;
+  padding: 2rem;
+}
+
+.PPM--Git--Logo {
+  align-self: center;
+}
+
+.PPM--Git--Logo img {
+  max-width: 80%;
+}
+
+.UnfinishedPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+.UnfinishedPage img {
+  width: 10%;
+}
+
+
+
