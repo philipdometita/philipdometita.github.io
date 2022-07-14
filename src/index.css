@@ -166,7 +166,7 @@ hr {
 }
 
 .PPM--Title p {
-  max-width: 35%;
+  max-width: 50%;
 }
 
 .PPM--Body {
@@ -178,15 +178,15 @@ hr {
 
 .PPM--Inspiration {
   display: flex;
+  flex-wrap: wrap;
+  min-width: 20rem;
   margin-bottom: 3rem;
 }
 
 .PPM--Inspiration p {
   max-width: 65%;
-}
-
-.PPM--Inspiration img {
-  margin-left: auto;
+  min-width: min-content;
+  margin-right: 3rem;
 }
 
 .PPM--HowItWorks {
@@ -200,7 +200,7 @@ hr {
 }
 
 .PPM--HowItWorks p {
-  max-width: 34%;
+  max-width: 70%;
   align-self: center;
 }
 
