@@ -10,7 +10,7 @@ import PDlogo from '../assets/PDlogo.png'
 export default function NavBar() {
 
     return (
-        <Navbar collapseOnSelect className='navbar' variant='light' expand='lg' sticky='top'>
+        <Navbar collapseOnSelect className='navbar' variant='light' expand='sm' sticky='top'>
             <Navbar.Brand as={NavLink} to='/' state={{ section: 'Title' }}> 
                 <img
                     src={PDlogo}
@@ -21,7 +21,8 @@ export default function NavBar() {
                 /> {' '}
                 Philip A. Dometita
             </Navbar.Brand>
-            <Navbar.Collapse id="responsive-navbar-nav">
+            <Navbar.Toggle aria-controls='navbarScroll' data-bs-target="navbarScroll" />
+            <Navbar.Collapse id="navbarScroll">
                 <Nav className='me-auto'>
                     <NavDropdown title='Projects'>
                         {projects.map((project, index) => {

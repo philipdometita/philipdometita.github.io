@@ -19,7 +19,6 @@ export default function Home() {
     const scrollOptions = {
         smooth: true,
         isDynamic: true,
-        offset: -50,
     }
     // effect for scrolling to the appropriate section
     useEffect(() => {

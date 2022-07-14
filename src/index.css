@@ -72,17 +72,24 @@ code {
   justify-content: center;
   height: 95vh;
   position: relative;
+  min-width: 20rem;
+  flex-wrap: wrap;
 }
 
 /* check width for mobile */
 .AboutMe--content {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   text-align: left;
   max-width: 40%;
   border: 1px #9d8667 solid;
   border-radius: 5px;
   padding: 2rem;
-  flex-wrap: wrap-reverse;
+  min-width: min-content;
+}
+
+.AboutMe--paragraph {
+  min-width: 20rem;
 }
 
 .laptopAndHeadphone {
