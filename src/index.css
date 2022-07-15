@@ -166,7 +166,7 @@ hr {
 }
 
 .PPM--Title p {
-  max-width: 50%;
+  max-width: 70%;
 }
 
 .PPM--Body {
@@ -191,17 +191,16 @@ hr {
 
 .PPM--HowItWorks {
   display: flex;
+  flex-direction: column;
   align-self: center;
-  flex-wrap: wrap-reverse;
 }
 
 .PPM--HowItWorks img {
-  margin-right: 2rem;
+  align-self: center;
 }
 
 .PPM--HowItWorks p {
-  max-width: 70%;
-  align-self: center;
+  align-self: left;
 }
 
 .PPM--Git {
@@ -216,6 +215,12 @@ hr {
 
 .PPM--Git--Logo {
   align-self: center;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.PPM--Git--Logo:hover {
+  opacity: 1.0;
 }
 
 .PPM--Git--Logo img {

@@ -29,6 +29,7 @@ export default function Project_PPM() {
             
             <div className='PPM--Body'>
                 <h3>Inspiration</h3>
+                <hr/>
                 <div className='PPM--Inspiration'>
                     <p>
                         As an avid player of Monster Hunter Rise and a person interested in mods for PC games, working with pak files
@@ -43,8 +44,8 @@ export default function Project_PPM() {
                     <img src={pakFiles} alt="" />
                 </div>
                 <h3>How it Works</h3>
+                <hr/>
                 <div className='PPM--HowItWorks'>
-                    <img src={usingPPM} alt=""/>
                     <p>
                         PPM uses a python dictionary to associate the generic pak file name to the name of the specific mod. When the user specifies a
                         mod to activate, PPM gets the proper pak file, renames it if necessary to maintain filename consistency, and copies it to Monster Hunter's
@@ -52,6 +53,7 @@ export default function Project_PPM() {
                         Hunter's directory. In order to maintain the filename consistency, PPM also renames all the active pak files that follow the 
                         removed pak file. PPM uses a JSON file to keep its state after the script is closed. 
                     </p>
+                    <img src={usingPPM} alt=""/>
                 </div>
             </div>
             <div className='PPM--Git'>
