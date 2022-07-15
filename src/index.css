@@ -50,9 +50,11 @@ code {
 
 .name {
   color: white;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: 'Quicksand-Regular', sans-serif;
   font-weight: bold;
+  margin-top: 1rem;
+  min-width: min-content;
 }
 
 .paintPotsPic {
@@ -84,7 +86,8 @@ code {
   max-width: 40%;
   border: 1px #9d8667 solid;
   border-radius: 5px;
-  padding: 2rem;
+  padding: 1rem;
+  margin: 1rem;
   min-width: min-content;
 }
 
@@ -157,12 +160,15 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem;
+  margin: 3rem;
+  max-width: 100%;
 }
 
 .PPM--Title--img {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  /* margin-top: 1rem;
+  margin-bottom: 2rem; */
+  margin: 1rem 1rem 2rem;
+  width: 22rem;
 }
 
 .PPM--Title p {
@@ -179,24 +185,31 @@ hr {
 .PPM--Inspiration {
   display: flex;
   flex-wrap: wrap;
-  min-width: 20rem;
+  min-width: 15rem;
   margin-bottom: 3rem;
+}
+
+.PPM--Inspiration img {
+  padding-left: 1rem;
 }
 
 .PPM--Inspiration p {
   max-width: 65%;
   min-width: min-content;
-  margin-right: 3rem;
+  /* margin-right: 3rem; */
 }
 
 .PPM--HowItWorks {
   display: flex;
   flex-direction: column;
   align-self: center;
+  max-width: 100%;
 }
 
 .PPM--HowItWorks img {
   align-self: center;
+  width: 22rem;
+  height: auto;
 }
 
 .PPM--HowItWorks p {
@@ -206,11 +219,11 @@ hr {
 .PPM--Git {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
   border: 1px #9d8667 solid;
   border-radius: 5px;
-  padding: 2rem;
+  padding: 1rem;
+  margin: 2rem 1rem;
+
 }
 
 .PPM--Git--Logo {
