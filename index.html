@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Philip Dometita">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap&family=Sofia+Sans+Condensed:wght@200..900&display=swap" 
+        rel="stylesheet">
+        <link rel="stylesheet" href="build/index.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <title>Philip Dometita | Web Portfolio</title>
+        <script src="./src/js/main.js" defer></script>
+        <script src="./src/js/nav.js" defer></script>
+    </head>
+    <body id="mainPage">
+        <!-- Navigation Bar / Nav slide out on mobile -->
+        <header class="flex">
+            <a href="#" class="flex logo">
+                <img src="/assets/general/PDlogo-white.svg" aria-hidden="true" alt="logo with upright keyboard and letters PD beside it"/>
+                <p class="fs-600 ff-sans-cond text-white">Philip Dometita</p>
+            </a>
+            <!-- stopPropagation() required to close slideout menu on outside click -->
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" onclick="event.stopPropagation()"><span class="sr-only" aria-expanded="false">Menu</span></button>
+            <nav id="temp">
+                <ul id="primary-navigation" tabindex="-1" data-visible="false" class="flex primary-navigation underline-indicators">
+                    <li id="homeNav" class="flex"><a href="#" class="fs-600 ff-sans-cond nav-link">Home</a></li>
+                    <li id="aboutNav" class="flex"><a href="#about" class="fs-600 ff-sans-cond nav-link">About Me</a></li>
+                    <li id="projectsNav" class="project-dropdown flex">
+                        <a href="#projects" class="fs-600 ff-sans-cond nav-link project-link">Projects</a>
+                        <div class="dropdown-content">
+                            <a class="fs-400 ff-sans-cond dropdown-1" href="./src/recipebook.html">Recipe Book</a>
+                            <a class="fs-400 ff-sans-cond dropdown-2" href="./src/ppm.html">Pak Patch Manager</a>
+                            <a class="fs-400 ff-sans-cond dropdown-3" href="./src/web-portfolio.html">Web Portfolio</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="temp">
+            <!-- Title section of home page -->
+            <section id="title" class="flex home-section title-page">
+                <img src="./assets/general/profpsketchglasses_trnsp.svg" class="profile-pic" alt="black and white silhouette of man's face">
+                <div class="title">
+                    <h1 class="text-white fs-700 ff-sans-normal name">Philip A. Dometita</h1>
+                    <h2 class="text-white fs-700 ff-sans-cond job">Developer</h2>
+                </div>
+            </section>
+            <!-- About section of the home page -->
+            <section id="about" class="home-section about flex">
+                <button id="about-button" class="about-button">
+                    <span class="button-text fs-400 ff-sans-normal">Who am I?</span>
+                    <span class="circle" aria-hidden="true">
+                        <span class="arrow-right" aria-hidden="true"></span>
+                    </span>
+                </button>
+
+                <div id="line" class="line" aria-hidden="true"></div>
+
+                <div id="about-paragraph" class="about-paragraph grid">
+                    <div class="about-paragraph-education flex">
+                        <p class="fs-400 ff-sans-normal">
+                            I am a Calgary-born computer science graduate from the University of Calgary with a concentration in
+                            Human-Computer Interactions. I graduated in May 2021 with distinction and a 3.62 GPA.
+                        </p>
+                        <div class="calgary-skyline flex">
+                            <img src="./assets/general/calgarySkyline.svg" alt="skyline silhouette of Calgary Alberta by yurkaimmortal">
+                            <p class="fs-300 ff-sans-cond text-light">Illustration by: yurkaimmortal</p>
+                        </div>
+                    </div>
+                    <div class="about-paragraph-interests flex">
+                        <p class="fs-400 ff-sans-normal">
+                            During my degree, I worked mostly in Java and Python, with some experience in C++ and SQL (PostgreSQL and MySQL). 
+                            My main interest is in the visual and interactive side of programming, so I have been studying 
+                            UI/UX design and web development since finishing my degree.
+                            I have been studying HTML5, CSS, and JavaScript for building websites. I have experimented with JS frameworks
+                            such as React for web apps and React Native for natively rendered mobile apps.
+                        </p>
+                        <a class="story-set-link flex" href="https://storyset.com/illustration/mobile-ui-ux/amico" target="_blank"> 
+                            <img src="./assets/general/Mobile UI-UX-amico.svg" alt="upright mobile phone with tiles floating infront of the screen">
+                            <p class="ff-sans-cond fs-300 text-dark">Mobile illustration by storyset</p>
+                        </a>    
+                    </div>
+                    <div class="about-paragraph-hobbies flex">
+                        <p class="fs-400 ff-sans-normal"> 
+                            Having grown up during a period of time where technology was advancing at an exponential rate, 
+                            tech innovations have always been interesting to me. As someone who has always had video games
+                            as a way to pass time, hang out with friends, or experience a story, the innovations in technology as it
+                            pertains to video games have always been clear to me. Graphics, storage space and speed, UI design, and other 
+                            innovations have been amazing to witness firsthand. Whether it be programming, phones, or computers, 
+                            I am excited to see where technology goes in the future.
+                        </p>
+                        <a class="story-set-link flex" href="https://storyset.com/illustration/gaming/amico" target="_blank">
+                            <img src="./assets/general/Gaming-amico.svg">
+                            <p class="ff-sans-cond fs-300 text-dark">Devices illustration by storyset</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Projects section of the home page -->
+            <section id="projects" class="projects-section home-section">
+                <!-- <a href="#" class="projects-section-title"><h1 class="fs-700 ff-sans-normal">Projects<span class="arrow-right" aria-hidden="true"></span></h1></a> -->
+                <h2 class="fs-700 ff-sans-normal">Projects</h2>
+                <div class="projects flex">
+                    <article class="project grid projects--recipe-book">
+                        <a href="./src/recipebook.html" class="project-thumb"><img src="./assets/recipeBook/recipe-book-splash.svg" alt="smiling face with a chef's hat with Recipe Book written below"/></a>
+                        <a href="./src/recipebook.html" class="project-title"><h3 class="fs-600 ff-sans-normal">Recipe Book<span class="arrow-right" aria-hidden="true"></span></h3></a>
+                        <p class="fs-300 ff-sans-normal text-black project-desc">
+                            An Android app made in React Native.
+                            Created for the purpose of keeping track of recipes in one place. Inspired by an old and beat-up recipe book kept by my mother.
+                        </p>
+                    </article>
+                    <article class="project grid projects--ppm">
+                        <a href="./src/ppm.html" class="project-thumb"><img src="./assets/ppm/inPPM-ray-so.png" alt="text interface of ppm with mods list and actions"/></a>
+                        <a href="./src/ppm.html" class="project-title"><h3 class="fs-600 ff-sans-normal">Pak Patch Manager<span class="arrow-right" aria-hidden="true"></span></h3></a>
+                        <p class="fs-300 ff-sans-normal text-black project-desc">
+                            A simple Python program that is used to manage modification files for the game Monster Hunter: Rise, making adding and removing mods less painful.    
+                        </p>
+                    </article>
+                    <article class="project grid projects--portfolio">
+                        <a href="./src/web-portfolio.html" class="project-thumb"><img src="./assets/general/PDlogo-light.svg"></a>
+                        <a href="./src/web-portfolio.html" class="project-title"><h3 class="fs-600 ff-sans-normal">Web Portfolio<span class="arrow-right" aria-hidden="true"></span></h3></a>
+                        <p class="fs-300 ff-sans-normal text-black project-desc">
+                            A web portfolio made in HTML5, SCSS, and vanilla JavaScript to showcase who I am and projects I have worked on.
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </main> 
+        <!-- Footer section -->
+        <footer class="footer flex">
+            <div class="footer-info flex">
+                <img src="/assets/general/PDlogo-light.svg" alt="logo with upright keyboard and letters PD beside it" aria-hidden="true"/>
+                <p class="text-light ff-sans-normal">A website by Philip Dometita</p>
+            </div>
+            <div class="footer-contacts flex">
+                <h2 class="text-light ff-sans-normal">My links:</h2>
+                <div class="footer-contacts-imgs flex">
+                    <a href="mailto:philip.dometita@alumni.ucalgary.ca" class="contact-links">
+                        <img src="/assets/general/email-svgrepo-com.svg" alt="github logo icon"/>
+                        <h3 class="sr-only">Email Link</h3>
+                    </a>
+                    <a href="https://github.com/philipdometita/" target="_blank" class="contact-links">
+                        <img src="/assets/general/github-svgrepo-com.svg" alt="mail icon"/>
+                        <h3 class="sr-only">Github Link</h3>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Philip Dometita">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap&family=Sofia+Sans+Condensed:wght@200..900&display=swap" 
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="../../build/index.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <title>Philip Dometita | Pak Patch Manager</title>
+        <script src="./js/nav.js" defer></script>
+    </head>
+    <body>
+        <!-- Navigation bar / nav slide out for mobile -->
+        <header class="flex">
+            <a href="../../index.html" class="flex logo">
+                <img src="../../assets/general/PDlogo-white.svg" aria-hidden="true" alt="logo with upright keyboard and letters PD beside it"/>
+                <p class="fs-600 ff-sans-cond text-white">Philip Dometita</p>
+            </a>
+            <!-- stopPropagation() required to close slideout menu on outside click -->
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" onclick="event.stopPropagation()"><span class="sr-only" aria-expanded="false">Menu</span></button>
+            <nav>
+                <ul id="primary-navigation" tabindex="-1" data-visible="false" class="flex primary-navigation underline-indicators">
+                    <li id="homeNav" class="flex"><a href="../../index.html" class="fs-600 ff-sans-cond nav-link">Home</a></li>
+                    <li id="aboutNav" class="flex"><a href="../../index.html#about" class="fs-600 ff-sans-cond nav-link">About Me</a></li>
+                    <li id="projectsNav" class="project-dropdown active flex">
+                        <a href="../../index.html#projects" class="fs-600 ff-sans-cond nav-link project-link">Projects</a>
+                        <div class="dropdown-content">
+                            <a class="fs-400 ff-sans-cond dropdown-1" href="./recipebook.html">Recipe Book</a>
+                            <a class="fs-400 ff-sans-cond active dropdown-2" href="#">Pak Patch Manager</a>
+                            <a class="fs-400 ff-sans-cond dropdown-3" href="./web-portfolio.html">Web Portfolio</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="ppm project-page flex">
+            <!-- Title, picture, and main description section -->
+            <section class="project-title flex">
+                <div class="flex">
+                    <img src="../../assets/ppm/inPPM-ray-so.png" class="project-title-img" alt="text interface of ppm with mods list and actions">
+                    <h1 class="fs-700 ff-sans-normal text-black">Pak Patch Manager</h1>
+                </div>
+                <div class="project-description flex">
+                    <p class="fs-400 ff-sans-normal text-black">
+                        A simple Python program for managing modification files for the game 
+                        Monster Hunter: Rise which makes adding and removing mods a little less painful and little more
+                        convient. 
+                    </p>
+                    <p class="fs-400 ff-sans-normal text-black">
+                        First, a background. There are multiple ways to mod the game Monster Hunter: Rise 
+                        (referred to as Rise from here forward). One of those ways is by adding a pak patch file 
+                        to the games directory. These files have the name re_chunk_000.pak.patch_XYZ.pak, where
+                        XYZ starts at 001 and is incremented for every pak patch file added. 
+                    </p>
+                    <div>
+                        <img src="../assets/ppm/pakFiles.png">
+                        <p class="fs-400 ff-sans-cond text-black">Pak file structure</p>
+                    </div>
+                    <p class="fs-400 ff-sans-normal text-black">
+                        Given enough mods and enough time, it would be difficult to know which mod is which when you want to remove or update
+                        a mod. The simple solution is to keep a note about which pak file relates to which mod and
+                        update the note every time you add or remove mods.
+                    </p>
+                    <p class="fs-400 ff-sans-normal text-black">
+                        Pak Patch Manager does one better by keeping track of mods while placing or removing the mods
+                        in Rise's directory while renaming the files so the file names remain consistent.
+                    </p>
+                </div>
+            </section>
+            <!-- project features section -->
+            <section class="ppm--features flow flex">
+                <h2 class="fs-600 ff-sans-normal text-black">Features</h2>
+                
+                <p class="fs-400 ff-sans-normal text-black">
+                    Add and remove specific mods from Rise's main directory
+                </p>
+
+                <div class="PPM-img">
+                    <img src="../assets/ppm/usingPPM-ray-so.png" alt="text interface of ppm with mods list and actions and selected action">
+                    <p class="fs-400 ff-sans-cond text-black">PPM activating mod #3</p>
+                </div>
+                
+                <div class="divider"></div>
+
+                <p class="fs-400 ff-sans-normal text-black">
+                    remove all currently activated mods from Rise's main directory. Especially useful if the 
+                    game is updated and mods are not compatible with the new version.
+                </p>
+
+                <div class="PPM-img">
+                    <img src="../assets/ppm/removeAll-ray-so.png" alt="text interface of ppm with all mods set to 'not active'">
+                    <p class="fs-400 ff-sans-cond text-black">PPM deactivating all active mods</p>
+                </div>
+
+                <div class="divider"></div>
+
+                <p class="fs-400 ff-sans-normal text-black">
+                    Read the mods folder again so you can add mods while using the program without having to restart
+                    it.
+                </p>
+                <div class="PPM-img">
+                    <img src="../assets/ppm/addMod-ray-so.png" alt="text interface of ppm with new mod appearing after selecting re read">
+                    <p class="fs-400 ff-sans-cond text-black">PPM re-reading mods folder</p>
+                </div>
+            </section>
+            <div class="project-github--link flex">
+                <p class="fs-400 ff-sans-normal">Check out the project, installation instructions, and its source code here:</p>
+                <a href="https://github.com/philipdometita/PakPatchManager" target="_blank">
+                    <img src="../assets/general/github-svgrepo-com.svg">
+                </a>
+            </div>
+        </main>
+        <!-- Foooter section -->
+        <footer class="footer flex">
+            <div class="footer-info flex">
+                <img src="../../assets/general/PDlogo-light.svg" alt="logo with upright keyboard and letters PD beside it" aria-hidden="true"/>
+                <p class="text-light ff-sans-normal">A website by Philip Dometita</p>
+            </div>
+            <div class="footer-contacts flex">
+                <h2 class="text-light ff-sans-normal">My links:</h2>
+                <div class="footer-contacts-imgs flex">
+                    <a href="mailto:philip.dometita@alumni.ucalgary.ca" class="contact-links">
+                        <img src="../../assets/general/email-svgrepo-com.svg" alt="github logo icon"/>
+                        <h3 class="sr-only">Email Link</h3>
+                    </a>
+                    <a href="https://github.com/philipdometita/" target="_blank" class="contact-links">
+                        <img src="../../assets/general/github-svgrepo-com.svg" alt="mail icon"/>
+                        <h3 class="sr-only">Github Link</h3>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

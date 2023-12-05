@@ -1,0 +1,103 @@
+/* scss for web portfolio project page */
+@use "../breakpoints" as b;
+
+.web-portfolio {
+    .project-title-img {
+        background-color: hsl(var(--clr-dark) / 1);
+    }
+
+    .project-description {
+        flex-direction: column;
+    }
+
+    .portfolio-comparisons {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+        @media (min-width: b.$layout-breakpoint-laptop) {
+            align-items: flex-start;
+            h2 {
+                margin-left: 3rem;
+            }
+        }
+
+        p {
+            max-width: 85%;
+        }
+        
+        img {
+            border: 2px solid hsl(var(--clr-dark) / 1);
+        }
+
+        // styles for the comparison divs 
+        .comparison {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+
+            //styles for the image divs within comparison divs
+            & > div {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                @media (min-width: b.$layout-breakpoint-laptop) {
+                    flex-direction: row;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .comparison-nav {
+            .nav-imgs {
+                gap: 1rem;
+            }
+        }
+
+        .nav-mobile-imgs {
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-imgs {
+            max-width: 100%;
+            .about-img-after {
+                flex-direction: column;
+                max-width: 100%;
+
+                // remove borders between the about img afters
+                & > img {
+                    border-bottom: 0px solid hsl(var(--clr-dark) / 1);
+                    background-color: black;
+                }
+
+                & > div > img{
+                    border-top: 0px solid hsl(var(--clr-dark) / 1);
+                }
+            }   
+
+            @media (min-width: b.$layout-breakpoint-laptop) {
+                .about-img-after {
+                    max-width: 40%;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    .portfolio-conclusion {
+        flex-direction: column;
+        margin-bottom: 2rem;
+        @media (min-width: b.$layout-breakpoint-laptop) {
+            align-items: flex-start;
+            h2 {
+                margin-left: 3rem;
+            }
+        }
+        
+        p {
+            max-width: 85%;
+            align-self: center;
+        }
+    }
+}
+

@@ -1,0 +1,61 @@
+/* Main scss file that compiles to build/index.css */
+
+@use "cssReset";
+@use "utilityClasses";
+@use "breakpoints" as b;
+@use "title";
+@use "about";
+@use "selectedProjects";
+@use "footer";
+@use "nav";
+@use "./projects/recipeBook.scss";
+@use "./projects/ppm.scss";
+@use "./projects/web-portfolio.scss";
+
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+    /* colours */
+    --clr-black: 225 6% 12%;
+    --clr-dark: 29 23% 39%;
+    --clr-light: 33 36% 76%;
+    --clr-white: 0 0% 100%;
+    --clr-gold: 39 51% 50%;
+
+    /* font sizes */
+    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1.25rem;
+    --fs-500: 1rem;
+    --fs-400: 0.9375rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+
+    @media (min-width:b.$layout-breakpoint-tablet) {
+        --fs-800: 5rem;
+        --fs-700: 2.5rem;
+        --fs-600: 1.5rem;
+        --fs-400: 1rem;
+    }
+    
+    @media (min-width:b.$layout-breakpoint-laptop) {
+        --fs-800: 6.25rem;
+        --fs-700: 3.5rem;
+        --fs-600: 2rem;
+        --fs-400: 1.125rem;
+    }
+
+    /* font families */
+    --ff-sans-cond: "Sofia Sans Condensed", sans-serif;
+    --ff-sans-normal: "Montserrat", sans-serif;
+}
+
+// scroll behaviour for links in nav bar 
+html, body { 
+    scroll-behavior: smooth
+}
+
+

@@ -1,0 +1,30 @@
+/* scss for Pak Patch Manager project page */
+@use "../breakpoints" as b;
+
+.ppm {
+    .project-title img {
+        max-height: 50dvh;
+    }
+
+    .ppm--features {
+        flex-direction: column;
+        --flow-space: 1.5rem;
+        & > p {
+            max-width: 90%;
+        }
+        .PPM-img {
+            align-self: center;
+            margin-bottom: 2rem;
+            
+            img {
+                max-width: 90%;
+                max-height: 65dvh;
+                object-fit: contain;
+            }
+        }
+
+        @media (min-width: b.$layout-breakpoint-tablet) {
+            width: 80%;
+        }
+    }
+} 

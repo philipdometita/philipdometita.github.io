@@ -1,0 +1,293 @@
+/* scss for about section on the main page */
+
+@use "breakpoints" as b;
+
+// transition mixin by Alvaro Trigo https://codepen.io/alvarotrigo/pen/OJmrqVB
+@mixin transitionCB($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,0.076,1)) {
+    transition: $property $duration $ease;
+}
+
+.about {
+    @include transitionCB;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    padding-block: 2rem;
+
+    // button hover effect by Alvaro Trigo https://codepen.io/alvarotrigo/pen/OJmrqVB
+    button {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        background: transparent;
+        padding: 0;
+        z-index: 11;
+    
+        &.about-button {
+            @include transitionCB;
+            width: 12rem;
+            height: auto;
+
+            // arrow within circle part of button
+            .circle {
+                @include transitionCB;
+                position: relative;
+                display: block;
+                margin-left: auto;
+                width: 3rem;
+                height: 3rem;
+                background: hsl(var(--clr-dark) / 1);
+                border-radius: 1.625rem;
+                .arrow-right {
+                    position: absolute;
+                    right: 1.25rem;
+                    top: 1.05rem;
+                    background: none;
+                    border: solid hsl(var(--clr-light) / 1);
+                    border-width: 0 3px 3px 0;
+                }
+            }
+            
+            .button-text {
+                @include transitionCB;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 2rem;
+                bottom: 0;
+                padding: 0.75rem 0;
+                color: hsl(var(--clr-dark) / 1);
+                font-weight: 700;
+                line-height: 1.6;
+                text-align: center;
+                z-index: 22;
+            } 
+        }
+    
+        &:hover {
+            .circle {
+                width: 100%;
+                .arrow-right {
+                    transform: translate(.3rem, 0) rotate(-45deg);
+                    border: solid hsl( var(--clr-white) / 1);
+                    border-width: 0 3px 3px 0;
+                }
+            }
+            .button-text {
+                color: hsl(var(--clr-white) / 1)
+            }
+        }
+    }
+    
+    // divider line styles
+    .line {
+        @include transitionCB;
+        width: 0%;
+        border-bottom: 0px solid hsl(var(--clr-dark) / 1);
+    }
+    
+    .about-paragraph {
+        @include transitionCB(all, 1s);
+        position: relative;
+        transition-delay: .5s;
+        opacity: 0;
+        padding: 1rem;
+        z-index: 9;
+        max-height: 0;
+        overflow: hidden;
+        
+        // grid for mobile layout
+        grid-template-areas: 
+            '. education .'
+            '. interests .'
+            '. hobbies .'
+            '. temp .';
+
+        // styles for sub divs within about-paragraph
+        & > div {
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            outline: 2px solid black;
+
+            & > p {
+                padding-bottom: 1rem;
+            }
+
+            a {
+                max-width: 80%;
+                @media (min-width: b.$layout-breakpoint-laptop) {
+                    max-width: 50%;
+                }
+            }
+        }
+
+        .about-paragraph-education {
+            grid-area: education;
+            padding-top: 2rem;
+            margin-bottom: 1rem;
+            
+            & > p {
+                max-width: 75%;
+                padding-bottom: 2rem;
+            }
+
+            .calgary-skyline {
+                width: 100%;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                img {
+                    width: 100%;
+                }
+
+                p {
+                    background-color: hsl(61 1% 17% / 1);
+                    max-height: 5%;
+                    padding: .5rem 0 1.5rem .5rem;
+                }
+            }
+
+        }
+
+        // use clip paths to create comic-esque borders
+        .about-paragraph-interests {
+            grid-area: interests;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% calc(100% - 2rem));
+            padding: 2rem 1rem 2rem 1rem;
+            background-color: hsl(var(--clr-black) / 1);
+            & > * {
+                z-index: 30;
+            }
+            &::before {
+                content: "";
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
+                background-color: hsl(var(--clr-light) / 1);
+                display: block;
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% calc(100% - 2rem));
+            }
+
+            p {
+                padding: 1rem 1rem 1rem 0;
+            }
+
+        }
+
+        // clip paths that are parallel to the paths for interest
+        .about-paragraph-hobbies {
+            grid-area: hobbies;
+            position: relative;
+            clip-path: polygon(0 0, 100% calc(0% + 2rem), 100% 100%, 0% 100%);
+            padding: 2rem 1rem 2rem 1rem;
+            margin-top: -1.5rem;
+            background-color: hsl(var(--clr-black) / 1);
+            & > * {
+                z-index: 30;
+            }
+
+            &::before {
+                content: "";
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
+                background-color: hsl(var(--clr-light) / 1);
+                display: block;
+                position: absolute;
+                bottom: 2px;
+                right: 2px;
+                clip-path: polygon(0 0, 100% calc(0% + 2rem), 100% 100%, 0% 100%);
+            }
+
+            p {
+                padding: 0 1rem 1rem 1rem;
+            }
+        }
+
+        // layout and styles for tablet and larger screens
+        @media (min-width: b.$layout-breakpoint-tablet) {
+            grid-template-areas: 
+                '. education education .'
+                '. interests hobbies .'
+                '. temp temp .';
+
+            .about-paragraph-education {
+                margin-bottom: .5rem;
+            }
+
+            // modify clip paths since interests and hobbies are in a row
+            .about-paragraph-interests {
+                clip-path: polygon(0 0, 100% 0, calc(100% - 4rem) 100%, 0 100%);
+                padding: 1rem 2rem 1rem 2rem;
+                align-items: flex-start;
+                &::before {
+                    clip-path: polygon(0 0, 100% 0, calc(100% - 4rem) 100%, 0 100%);
+                }
+            }
+            
+
+            .about-paragraph-hobbies {
+                flex-direction: column-reverse;
+                justify-content: flex-start;
+                align-items: flex-end;
+                row-gap: 2rem;
+                clip-path: polygon(4rem 0, 100% 0, 100% 100%, 0 100%);
+                margin-left: -3.5rem;
+                margin-top: 0;
+                padding: 1rem 2rem 1rem 2rem;
+                
+                &::before {
+                    clip-path: polygon(4rem 0, 100% 0, 100% 100%, 0 100%);
+                }
+            }
+        }
+
+        @media (min-width: b.$layout-breakpoint-laptop) {
+            .about-paragraph-interests {
+                align-items: center;
+            }
+
+            .about-paragraph-hobbies {
+                align-items: center;
+            }
+        }
+
+    }
+
+    // styles for paragraph fade in on click of about button
+    .fade-in {
+        opacity: 1;
+        transform: translateY(1rem);
+    }
+    
+    // styles for divider line expand on click of about button
+    .expand {
+        width: 90%;
+        border-width: 2px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    // styles for the about button transition on click
+    .about-button--transition {
+        cursor: default;
+        
+        .circle {
+            opacity: 0;
+        }
+
+        &:hover {
+            .button-text {
+                color: hsl(var(--clr-dark) / 1)
+            }
+        }
+    }
+}

@@ -1,0 +1,300 @@
+/* scss for nav bar */
+
+@use "breakpoints" as b;
+
+// transition mixin by Alvaro Trigo https://codepen.io/alvarotrigo/pen/OJmrqVB
+@mixin transitionCB($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,0.076,1)) {
+    transition: $property $duration $ease;
+}
+
+header {
+    height: 5dvh;
+    width: 100dvw;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    justify-content: space-between;
+    align-items: center;
+
+    // backdrop-filter workaround to get blur / glass morphism effect on 
+    // nav bar and nav slide out at same time
+    &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(1rem);
+        background-color: hsl(var(--clr-dark) / .67);
+    }
+    
+    a {
+        text-decoration: none;
+        z-index: 1000;
+    }
+    
+    .logo {
+        align-items: center;
+        height: 100%;
+        width: auto;
+        padding-inline: 1rem;
+        gap: .5rem;
+        img {
+            height: 100%;
+            padding: .3rem;
+        }
+        p {
+            font-weight: 300;
+        }
+    }
+    
+    .primary-navigation {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        padding-inline: 2rem;
+        height: 5dvh;
+        
+        li {
+            padding: 0;
+
+            .nav-link {
+                transition: all .35s ease-in-out;
+                color: hsl( var(--clr-white) / .5 );
+                width: 100%;
+                // padding-inline: 2rem;
+            }
+        }
+
+        // stylings for breakpoints that do not use slide out
+        @media (min-width: b.$layout-breakpoint-laptop) {
+            align-items: center;
+            li {
+                height: 100%;
+                max-height: 100%;
+                align-items: center;
+                white-space: nowrap;
+                
+                .nav-link {
+                    padding-inline: 3rem;
+                }
+            }
+        }
+
+        // drop down animation based on Dropdown Animations with CSS Transforms
+        // by Cody Pearce
+        .project-dropdown {
+            position: relative;
+            
+            .dropdown-content {
+                @include transitionCB;
+                position: absolute;
+                left: 0;
+                top: 100%;
+                height: 0%;
+                min-width: 100%;
+                z-index: 100; 
+
+                .active {
+                    color: hsl( var(--clr-white) / 1 );
+                }
+                
+                // do transitions for non slide out nav bar
+                @media(min-width: b.$layout-breakpoint-laptop) {
+                    @for $i from 1 through 3 {
+                        .dropdown-#{$i} {
+                            transform-origin: top center;
+                            opacity: 0;
+                            transform: rotateX(-90deg);
+                            background-color: hsl(var(--clr-dark) / 1);
+                        }
+                    }
+                }
+
+                // change color of nav link on hover
+                a {
+                    @include transitionCB;
+                    color: hsl( var(--clr-light) / 1);
+                    padding: 1rem;
+                    text-decoration: none;
+                    display: block;
+                    &:hover {
+                        color: hsl( var(--clr-white) / 1 )
+                    }
+                }              
+            }
+
+            // keeps dropdown flush with nav bar when projects is active
+            &.active {
+                .dropdown-content {
+                    top: calc(100% + .2rem);
+                }
+            }
+
+            @media (min-width: b.$layout-breakpoint-laptop) {
+                &:hover {
+                    .dropdown-content {
+                        @for $i from 1 through 3 {
+                            .dropdown-#{$i} {
+                                transition: all 390ms ease-in-out;
+                                transition-delay: $i * 110ms;
+                                transform: rotateX(0deg);
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // hide hamburger menu button by default
+    .mobile-nav-toggle {
+        display: none;
+    }
+
+    // mobile slide out styles for mobile and tablet breakpoints
+    @media (max-width: b.$layout-breakpoint-laptop) {
+        .primary-navigation {
+            position: fixed;
+            z-index: 1000;
+            inset: 0 0 0 30%;
+            list-style: none;
+            padding: 2rem;
+            margin: 5dvh 0 0 0;
+            flex-direction: column;
+            height: 95dvh;
+            background: transparent;
+            transform: translateX(100%);
+            transition: transform 500ms ease-in-out;
+            
+            li {
+                z-index: 1000;
+                margin-bottom: 1rem;
+                padding-bottom: .5rem;
+            }
+
+            // indent drop down links to separate from main categories
+            .dropdown-content {
+                a {
+                    margin-left: 2rem;
+                    width: 100%;
+                }
+            }
+
+            // backdrop-filter workaround to get blur / glass morphism effect on 
+            // nav bar and nav slide out at same time
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                content: "";
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(1rem);
+                background-color: hsl(var(--clr-dark) / .67);
+                z-index: 999;
+            }
+        }
+
+        // transfrom for slide out transition
+        .primary-navigation[data-visible="true"] {
+            transform: translateX(0);
+        }
+
+        // styles for hamburger menu button
+        .mobile-nav-toggle {
+            display: block;
+            margin-left: auto;
+            margin-right: 1rem;
+            cursor: pointer;
+            z-index: 2000;
+            right: 1rem;
+            top: .5rem;
+            background: transparent;
+            background-image: url(../../assets/general/hamburger-menu-svgrepo-com.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 1.5rem;
+            aspect-ratio: 1;
+            border: 0;
+        }
+
+        // switch hamburger to close button if slide out is expanded
+        .mobile-nav-toggle[aria-expanded="true"] {
+            background-image: url(../../assets/general/close-svgrepo-com.svg);
+        }
+        
+        // outline if user is using keyboard to navigate
+        .mobile-nav-toggle:focus-visible {
+            outline: 5px solid hsl( var(--clr-white) / 1 );
+            outline-offset: 5px;
+        }
+    }
+
+    // styles for nav slide out on landscape mobile devices 
+    @media (max-width: b.$layout-breakpoint-laptop) and (orientation: landscape) {
+        // increase height of nav bar
+        height: 10dvh;
+
+        .primary-navigation {
+            //adjust slide out dimensions to account for larger nav bar
+            height: 90dvh;
+            margin: 10dvh 0 0 0;
+
+            .dropdown-content {
+                a {
+                    display: inline-block;
+                    width: 40%;
+                }
+            }
+        }
+    }
+
+    // indicators to show if nav link is active or hovered
+    .underline-indicators {
+        & > * {
+            cursor: pointer;
+            position: relative;
+            padding-inline: 2rem;
+            border: 0;
+            @media (max-width: b.$layout-breakpoint-tablet) {
+                padding-block: 1rem;
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                width: 0%;
+                height: .2rem;
+                bottom: 0;
+                left: 0;
+                background-color: hsl( var(--clr-white) / .5 );
+                transition: all ease-in-out .2s;
+            }
+
+            &:hover, 
+            &:focus {
+                &:not(.active)::after {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+
+        .nav-link:hover {
+            color: hsl( var(--clr-white) / .75 ); 
+        }
+
+        // different underline indicator and text colour for active link
+        & > .active,
+        & > [aria-selected="true"] {
+            .nav-link {
+                color: hsl( var(--clr-white) / 1 );
+            }
+            border-bottom: .2rem solid hsl( var(--clr-white) / 1 );
+        } 
+    }
+}

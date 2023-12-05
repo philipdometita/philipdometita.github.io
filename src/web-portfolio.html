@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Philip Dometita">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap&family=Sofia+Sans+Condensed:wght@200..900&display=swap" 
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="../../build/index.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <title>Philip Dometita | Web Portfolio Project</title>
+        <script src="./js/nav.js" defer></script>
+    </head>
+    <body>
+        <!-- Navigation bar / nav slide out for mobile -->
+        <header class="flex">
+            <a href="../../index.html" class="flex logo">
+                <img src="../../assets/general/PDlogo-white.svg" aria-hidden="true" alt="logo with upright keyboard and letters PD beside it"/>
+                <p class="fs-600 ff-sans-cond text-white">Philip Dometita</p>
+            </a>
+            <!-- stopPropagation() required to close slideout menu on outside click -->
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" onclick="event.stopPropagation()"><span class="sr-only" aria-expanded="false">Menu</span></button>
+            <nav>
+                <ul id="primary-navigation" tabindex="-1" data-visible="false" class="flex primary-navigation underline-indicators">
+                    <li id="homeNav" class="flex"><a href="../../index.html" class="fs-600 ff-sans-cond nav-link">Home</a></li>
+                    <li id="aboutNav" class="flex"><a href="../../index.html#about" class="fs-600 ff-sans-cond nav-link">About Me</a></li>
+                    <li id="projectsNav" class="project-dropdown active flex">
+                        <a href="../../index.html#projects" class="fs-600 ff-sans-cond nav-link project-link">Projects</a>
+                        <div class="dropdown-content">
+                            <a class="fs-400 ff-sans-cond dropdown-1" href="./recipebook.html">Recipe Book</a>
+                            <a class="fs-400 ff-sans-cond dropdown-2" href="./ppm.html">Pak Patch Manager</a>
+                            <a class="fs-400 ff-sans-cond active dropdown-3" href="#">Web Portfolio</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="web-portfolio project-page flex">
+            <!-- Title, picture, and main description section -->
+            <section class="project-title flex">
+                <div class="flex">
+                    <img src="../../assets/general/PDlogo-light.svg" class="project-title-img" alt="smiling face with a chef's hat">
+                    <h1 class="fs-700 ff-sans-normal text-black">Web Portfolio</h1>
+                </div>
+                <div class="project-description flex">
+                    <p class="fs-400 ff-sans-normal text-black">
+                        A website made in HTML5, SCSS, and vanilla JavaScript to showcase who I am and 
+                        projects I have worked on. I decided to make a portfolio in the more basic web development
+                        technologies in order to improve my basic web development skills.
+                    </p>
+
+                    <p class="fs-400 ff-sans-normal text-black">
+                        Before making this website, I actually had another web portfolio made in React, 
+                        Bootstrap, and React Router. However, I noticed problems with it that inspired me 
+                        to make a portfolio from scratch, which resulted in the website you are currently on.
+                    </p>
+                    
+                    <p class="fs-400 ff-sans-normal text-black">
+                        One of the main problems is that the old portfolio was built with a desktop first design, with 
+                        mobile responsiveness being an afterthought that was rushed into the project at the last 
+                        minute. In modern web development, responsiveness is a required aspect of modern websites,
+                        especially with smartphones being the most prevalent device. As such, mobile-first design is 
+                        recommended when designing front-end interfaces. This portfolio was built mobile-first while
+                        constantly checking the bigger screen sizes as the website was developed.
+                    </p>
+
+                    <p class="fs-400 ff-sans-normal text-black">
+                        Another problem with the old portfolio was a problem I affectionately call the "There's 
+                        a library for that" problem. It also seems that this problem is more widespread if you look
+                        at the answers on StackOverflow. When you are working in a JS framework like React, it feels like there is a library
+                        for every problem you may encounter. This in itself is not a bad thing; why spend the effort to 
+                        solve a problem that has already been solved? However, solving such problems without the use of 
+                        libraries is beneficial to your learning of the languages.
+                    </p>
+
+                    <p class="fs-400 ff-sans-normal text-black">
+                        I could spend longer picking apart the old portfolio, but the wall of text above is 
+                        probably enough. Instead of listing out the features of the new portfolio, it might be fun to
+                        look at specific examples and compare the two portfolios I have made for myself.
+                    </p>
+                </div>
+            </section>
+            <!-- Old and current portfolio comparison section -->
+            <section class="portfolio-comparisons flow flex">
+                <h2 class="fs-600 ff-sans-normal text-black">Portfolio Comparisons</h2>
+                <!-- comparison between nav bars -->
+                <div class="comparison comparison-nav flex">
+                    <h3 class="fs-500 ff-sans-normal text-black">Navigation Bar</h3>
+                    <div class="nav-imgs flex">
+                        <div class="nav-before">
+                            <img src="../assets/webPortfolio/navBefore.png" alt="navigation bar with links directly after logo and name on left side">
+                            <p class="fs-400 ff-sans-cond text-black">The nav bar of the old portfolio</p>
+                        </div>
+                        <div class="nav-after">
+                            <img src="../assets/webPortfolio/navAfter.png" alt="navigation bar with logo and name on left and links on right ">
+                            <p class="fs-400 ff-sans-cond text-black">The nav bar of the current portfolio</p>
+                        </div>
+                    </div>
+                    <p class="fs-400 ff-sans-normal text-black">
+                        The main differences between the functionality of the nav bars are the changes in 
+                        links that stem from the different layouts of the portfolios and the interactivity 
+                        with the links and the drop-downs. The previous portfolio did not have hover effects
+                        for the project link and activated the drop-down with a click. The current portfolio
+                        has a projects section on the main page, so clicking the link goes to the section while
+                        the drop-down is activated with a mouse hover. Although it is subjective, I feel like 
+                        the current portfolio's nav bar is much better in terms of its style, with active link 
+                        indicators, a better layout, and a drop-down that lines up better.
+                    </p>
+                    <div class="nav-mobile-imgs flex">
+                        <div class="nav-mobile-before">
+                            <img src="../assets/webPortfolio/mobileNavBefore.png">
+                            <p class="fs-400 ff-sans-cond text-black">The mobile nav of the old portfolio</p>
+                        </div>
+                        <div class="nav-mobile-after">
+                            <img src="../assets/webPortfolio/mobileNavAfter.png">
+                            <p class="fs-400 ff-sans-cond text-black">The mobile nav of the current portfolio</p>
+                        </div>
+                    </div>
+                    <p class="fs-400 ff-sans-normal text-black">
+                        In the old portfolio, the specific projects remained inside a drop-down in the mobile drop-down menu.
+                        In the current portfolio, the specific projects were not hidden in a drop-down. In the mobile layout for 
+                        both portfolios, the user has to provide an extra input to show the navigation. I felt that it was
+                        more tedious to access the specific projects in a nested drop-down menu since it would add an additional
+                        input.  
+                    </p>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- comparison of about sections -->
+                <div class="comparison comparison-about flex">
+                    <h3 class="fs-500 ff-sans-normal text-black">About Me Section</h3>
+                    <div class="about-imgs flex">
+                        <div>
+                            <img src="../assets/webPortfolio/aboutMeBefore.png" alt="About paragraph above outline of monitor and keyboard">
+                            <p class="fs-400 ff-sans-cond text-black">About me section of old portfolio</p>
+                        </div>
+                        <div class="about-img-after flex">
+                            <img src="../assets/webPortfolio/aboutMeAfter.png" alt="About section above silhouette of Calgary skyline">
+                            
+                            <div>
+                                <img src="../assets/webPortfolio/aboutMeInterestsAfter.png" alt="About paragraphs with mobile phone and man playing video games illustrations">
+                                <p class="fs-400 ff-sans-cond text-black">About me section of current portfolio</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="fs-400 ff-sans-normal text-black">
+                        From a strictly objective standpoint, the about me section in the current portfolio simply has more
+                        information contained within itself. Whether this is a good thing or not is up for debate. Should the
+                        about section be more thorough so as to give the reader more information about myself? Or should the about section
+                        be more succinct so as to allow the reader to gather the main points in less time? I tried to strike a balance
+                        in the current portfolio. While I could have typed out my entire life story, doing so would only be a waste of
+                        time for me and anyone reading the section. So I included enough to get a sense of my interests and my background.
+                    </p>
+
+                    <p class="fs-400 ff-sans-normal text-black">
+                        From a style standpoint, I feel like the current section is more visully interesting and eyecatching
+                        with illustrations related to the information in the panels and a responsive layout inspired by comics 
+                        and manga.
+                    </p>
+                </div>
+                    
+                <div class="divider"></div>
+                
+                <!-- comparison of contact sections -->
+                <div class="comparison comparison-contact flex">
+                    <h3 class="fs-500 ff-sans-normal text-black">Contacts</h3>
+                    <div class="contact-imgs flex">
+                        <div>
+                            <img src="../assets/webPortfolio/contactBefore.png" alt="a box with an email icon to the left of an email contained within">
+                            <p class="fs-400 ff-sans-normal text-black">contact section of the old portfolio</p>
+                        </div>
+                        <div>
+                            <img src="../assets/webPortfolio/footerAfter.png" alt="footer of current website">
+                            <p class="fs-400 ff-sans-normal text-black">footer section of the current portfolio</p>
+                        </div>
+                    </div>
+                    <p class="fs-400 ff-sans-normal text-black">
+                        In the old portfolio, there was a section exclusively for my contact email. In the current portfolio,
+                        my contact links were moved to the footer of the website, which is more in line with many modern websites.
+                        Having the contact links in the footer makes more sense in terms of visibility and space. In the old
+                        portfolio, the contact section was taking up 100% of the device screen height, which is excessive for a single
+                        email. In the current portfolio, the links take up less space and are visible at the bottom of the page,
+                        no matter which page you are on.
+                    </p>
+                    <p class="fs-400 ff-sans-normal text-black">
+                        In the current portfolio, the links are naturally clickable. This makes emailing me slightly more convenient.
+                        In the old portfolio, the email icon and text were not clickable, meaning anyone who wanted to email me would
+                        have to type out the email address or copy and paste it into their email app of choice.
+                    </p>
+                </div>
+            </section>
+            <!-- conclusion section -->
+            <section class="portfolio-conclusion flex flow">
+                <h2 class="fs-600 ff-sans-normal text-black">Conclusion</h2>
+                <p class="fs-400 ff-sans-normal text-black">
+                    In my opinion, the current portfolio is a big improvement in comparison to the old portfolio. In terms of
+                    style, the current portfolio is more visually interesting. The current portfolio has better illustrations, animations,
+                    and a more consistent colour palette. I believe that the layout is more interesting, especially in the about section,
+                    and effective in accessing information as shown in the new projects section. The current portfolio is more responsive and has
+                    better mobile navigation. Despite being a significant upgrade over the old portfolio, the new portfolio has a ton of room
+                    for improvement.   
+                </p>
+
+                <p class="fs-400 ff-sans-normal text-black">
+                    One of the biggest improvements that can be made on to the current portfolio comes from the biggest resolutions. 
+                    The layout of the website was developed on a 1920x1080 screen resolution, which means checking the larger 
+                    resolutions like 2560x1440 (2K) and 3840x2160 (4K) is an annoying task. The best you can really do is simulate 
+                    the higher resolutions by using a zoomed-in view. The website should be fine on larger resolutions, but from a style 
+                    standpoint, things might look weird and spaced out. Improving the layout for larger resolutions becomes more important 
+                    as higher resolution screens become more common.
+                </p>
+                
+                <p class="fs-400 ff-sans-normal text-black">
+                    I feel like the accessibility of the website has a long way to go until I am satisfied with it. Improving
+                    accessibility requires a lot of studying best practices for accessibility as well as experience when it comes to 
+                    things like writing good alt tags for images.
+                </p>
+
+                <p class="fs-400 ff-sans-normal text-black">
+                    Despite still having areas that can be improved, the portfolio has accomplished what I set out to do when I decided
+                    to remake it: show who I am and projects I have worked on while improving my skills in the basic web development
+                    technologies of HTML5, CSS, and JavaScript. I learned a ton while making this website, and like the portfolio, my knowledge
+                    in this area has plenty of opportunity to improve. Thus, I will continue to study, learn, and improve, while hopefully improving
+                    this website as I do.
+                </p>
+            </section>
+        </main>
+        <!-- Foooter section -->
+        <footer class="footer flex">
+            <div class="footer-info flex">
+                <img src="../../assets/general/PDlogo-light.svg" alt="logo with upright keyboard and letters PD beside it" aria-hidden="true"/>
+                <p class="text-light ff-sans-normal">A website by Philip Dometita</p>
+            </div>
+            <div class="footer-contacts flex">
+                <h2 class="text-light ff-sans-normal">My links:</h2>
+                <div class="footer-contacts-imgs flex">
+                    <a href="mailto:philip.dometita@alumni.ucalgary.ca" class="contact-links">
+                        <img src="../../assets/general/email-svgrepo-com.svg" alt="github logo icon"/>
+                        <h3 class="sr-only">Email Link</h3>
+                    </a>
+                    <a href="https://github.com/philipdometita/" target="_blank" class="contact-links">
+                        <img src="../../assets/general/github-svgrepo-com.svg" alt="mail icon"/>
+                        <h3 class="sr-only">Github Link</h3>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

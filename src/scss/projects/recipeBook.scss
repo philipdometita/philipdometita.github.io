@@ -1,0 +1,63 @@
+/* scss for Recipe Book project page */
+@use "../breakpoints" as b;
+
+.recipe-book {
+    .project-title img {
+        background-color: hsl(var(--clr-gold) / 1);
+    }
+
+    .recipe-book--features {
+        flex-direction: column;
+        --flow-space: 1.5rem;
+        p {
+            max-width: 90%;
+        }
+        img {
+            max-width: 90%;
+            max-height: 50dvh;
+            object-fit: contain;
+        }
+
+        .recipe-book--img,
+        .recipe-book--imgs {
+            align-self: center;
+            margin-bottom: 2rem;
+        }
+
+        // styles for divs with multiple images
+        .recipe-book--imgs{
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            img:first-child {
+                margin: 0 1rem 0 1rem;
+            }
+            img:last-child {
+                margin: 1rem 1rem 0 1rem;
+            }
+        } 
+        @media (min-width: b.$layout-breakpoint-tablet) {
+            p {
+                max-width: 70%;
+            }
+            .recipe-book--img {
+                min-width: 0;
+                max-height: 80dvh;
+            }
+            .recipe-book--imgs {
+                flex-direction: row;
+
+                img:first-child {
+                    margin: 0 1rem 0 0;
+                }
+
+                img:last-child {
+                    margin: 0;
+                }
+            }
+        }
+        @media (min-width: b.$layout-breakpoint-laptop) {
+            max-width: 80%;
+        }
+    }
+}

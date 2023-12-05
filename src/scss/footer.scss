@@ -1,0 +1,108 @@
+/* scss for footer section of the website*/
+
+@use "breakpoints" as b;
+
+// transition mixin by Alvaro Trigo https://codepen.io/alvarotrigo/pen/OJmrqVB
+@mixin transitionCB($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,0.076,1)) {
+    transition: $property $duration $ease;
+}
+
+
+.footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 100dvw;
+    max-width: 100%;
+    gap: 2rem;
+    background-color: hsl(var(--clr-black) / 1);
+    color: hsl(var(--clr-white) / 1);
+    
+    // change layout from column on mobile to row with info on left and contacts on right
+    @media (min-width: b.$layout-breakpoint-tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}
+
+// styles for footer info and logo
+.footer-info {
+    gap: 1rem;
+    align-items: center;
+    flex-direction: column;
+    img {
+        max-width: 18%;
+    }
+
+    @media (min-width: b.$layout-breakpoint-tablet) {
+        flex-direction: row;
+    }
+
+}
+
+// styles for contact links section of footer
+.footer-contacts {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+
+    //add padding right if footer is in row layout
+    @media (min-width: b.$layout-breakpoint-laptop) {
+        padding-right: 2rem;
+    }
+
+    h2 {
+        white-space: nowrap;
+        margin-bottom: .5rem;
+    }
+
+    .footer-contacts-imgs {
+        gap: 1.5rem;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        
+        @media (min-width: b.$layout-breakpoint-laptop) {
+            height: 120%;
+            width: 120%;
+        }
+
+        .contact-links {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            @include transitionCB;
+
+            img {
+                border-radius: 50%;
+                background-color: hsl(var(--clr-light) / 1);
+            }
+
+            // after for hover effect of contact links
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                border-radius: 50%;
+                background-color: hsl(var(--clr-light) / 1);
+                z-index: -1;
+                opacity: 0;
+                @include transitionCB;
+            }
+            
+            // hover effect for contact links 
+            &:hover {
+                transform: scale(1.1, 1.1);
+                &:after {
+                    transform: scale(1.2, 1.2);
+                    opacity: 0.75;
+                }
+            }   
+        }
+    }  
+}

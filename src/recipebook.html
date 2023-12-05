@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Philip Dometita">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap&family=Sofia+Sans+Condensed:wght@200..900&display=swap" 
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="../../build/index.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <title>Philip Dometita | Recipe Book</title>
+        <script src="./js/nav.js" defer></script>
+    </head>
+    <body>
+        <!-- Navigation bar / nav slide out for mobile -->
+        <header class="flex">
+            <a href="../../index.html" class="flex logo">
+                <img src="../../assets/general/PDlogo-white.svg" aria-hidden="true" alt="logo with upright keyboard and letters PD beside it"/>
+                <p class="fs-600 ff-sans-cond text-white">Philip Dometita</p>
+            </a>
+            <!-- stopPropagation() required to close slideout menu on outside click -->
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" onclick="event.stopPropagation()"><span class="sr-only" aria-expanded="false">Menu</span></button>
+            <nav>
+                <ul id="primary-navigation" tabindex="-1" data-visible="false" class="flex primary-navigation underline-indicators">
+                    <li id="homeNav" class="flex"><a href="../../index.html" class="fs-600 ff-sans-cond nav-link">Home</a></li>
+                    <li id="aboutNav" class="flex"><a href="../../index.html#about" class="fs-600 ff-sans-cond nav-link">About me</a></li>
+                    <li id="projectsNav" class="project-dropdown active flex">
+                        <a href="../../index.html#projects" class="fs-600 ff-sans-cond nav-link project-link">Projects</a>
+                        <div class="dropdown-content">
+                            <a class="fs-400 ff-sans-cond active dropdown-1" href="#">Recipe Book</a>
+                            <a class="fs-400 ff-sans-cond dropdown-2" href="./ppm.html">Pak Patch Manager</a>
+                            <a class="fs-400 ff-sans-cond dropdown-3" href="./web-portfolio.html">Web Portfolio</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="recipe-book project-page flex">
+            <!-- Title, picture, and main description section -->
+            <section class="project-title flex">
+                <div class="flex">
+                    <img src="../../assets/recipeBook/recipe-book-icon.svg" class="project-title-img" alt="smiling face with a chef's hat">
+                    <h1 class="fs-700 ff-sans-normal text-black">Recipe Book</h1>
+                </div>
+                <p class="fs-400 ff-sans-normal project-description">
+                    An android app built in React Native with the purpose of consolidating recipes that 
+                    you want to try or have enjoyed. Recipe Book was inspired by an old and beat-up notebook 
+                    that my mother recorded many recipes for the foods of my childhood. I made Recipe Book with
+                    the intention of helping me get better at cooking and React Native at the same time.
+                </p>
+            </section>
+            <!-- project features section -->
+            <section class="recipe-book--features flow flex">
+                <h2 class="fs-600 ff-sans-normal text-black">Features</h2>
+                <p class="fs-400 ff-sans-normal">
+                    Ability to save the details of a recipe such as, ingredients, directions,
+                    cook time, and servings made. You can edit the details of the recipe after it is saved.
+                </p>
+                <div class="recipe-book--img">
+                    <img src="../../assets/recipeBook/addRecipe.png" alt="recipe book interface with various text boxes">
+                    <p class="fs-400 ff-sans-cond text-black">Add / edit recipe screen</p>
+                </div>
+
+                <div class="divider"></div>
+
+                <p class="fs-400 ff-sans-normal">
+                    Delete saved recipes by touching and holding on the recipe you want to delete.
+                </p>
+                <div class="recipe-book--imgs flex">
+                    <div>
+                        <img src="../../assets/recipeBook/delete.png" alt="recipe card with delete button below">
+                        <p class="fs-400 ff-sans-cond text-black">Delete pop up</p>
+                    </div>
+                    <div>
+                        <img src="../../assets/recipeBook/deleteConfirm.png" alt="pop up asking to confirm delete">
+                        <p class="fs-400 ff-sans-cond text-black">Delete confirmation menu</p>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <p class="fs-400 ff-sans-normal">
+                    A tag system to better categorize recipes and make recipes of a specific type
+                    easier to find.
+                </p>
+                <div class="recipe-book--imgs flex">
+                    <div>
+                        <img src="../../assets/recipeBook/allTags.png" alt="menu with various food categories">
+                        <p class="fs-400 ff-sans-cond text-black">Add tags menu</p>
+                    </div>
+                    <div>
+                        <img src="../../assets/recipeBook/tags.png" alt="black bean noodles with various chosen tags">
+                        <p class="fs-400 ff-sans-cond text-black">Displayed tags on recipe screen</p>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <p class="fs-400 ff-sans-normal">
+                    Filter added recipes by tags and Sort recipes by cook time, servings, or date added to the app.
+                </p>
+                <div class="recipe-book--img">
+                    <img src="../../assets/recipeBook/filters.png" alt="menu with various food categories and sorting buttons">
+                    <p class="fs-400 ff-sans-cond text-black">Filter menu</p>
+                </div>
+                
+                <div class="divider"></div>
+
+                <p class="fs-400 ff-sans-normal">
+                    Search for recipes using keywords that are in the title or description.
+                </p>
+                <div class="recipe-book--imgs flex">
+                    <div>    
+                        <img src="../../assets/recipeBook/search.png" alt="search bar with search term and two results below">
+                        <p class="fs-400 ff-sans-cond text-black">Search by keyword in title</p>
+                    </div>
+                    <div>    
+                        <img src="../../assets/recipeBook/searchDesc.png" alt="search bar with search term and one result below">
+                        <p class="fs-400 ff-sans-cond text-black">Search by keyword in description</p>
+                    </div>
+                </div>
+            </section>
+            <div class="project-github--link flex">
+                <p class="fs-400 ff-sans-normal">Check out the project, installation instructions, and its source code on github:</p>
+                <a href="https://github.com/philipdometita/RecipeBook" target="_blank">
+                    <img src="../assets/general/github-svgrepo-com.svg">
+                </a>
+            </div>
+        </main>
+        
+        <!-- footer section -->
+        <footer class="footer flex">
+            <div class="footer-info flex">
+                <img src="../../assets/general/PDlogo-light.svg" alt="logo with upright keyboard and letters PD beside it" aria-hidden="true"/>
+                <p class="text-light ff-sans-normal">A website by Philip Dometita</p>
+            </div>
+            <div class="footer-contacts flex">
+                <h2 class="text-light ff-sans-normal">My links:</h2>
+                <div class="footer-contacts-imgs flex">
+                    <a href="mailto:philip.dometita@alumni.ucalgary.ca" class="contact-links">
+                        <img src="../../assets/general/email-svgrepo-com.svg" alt="github logo icon"/>
+                        <h3 class="sr-only">Email Link</h3>
+                    </a>
+                    <a href="https://github.com/philipdometita/" target="_blank" class="contact-links">
+                        <img src="../../assets/general/github-svgrepo-com.svg" alt="mail icon"/>
+                        <h3 class="sr-only">Github Link</h3>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
