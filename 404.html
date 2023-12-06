@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Philip Dometita">
+        <meta name="description" content="Web portfolio for Philip Dometita, a Filipino Canadian Developer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap&family=Sofia+Sans+Condensed:wght@200..900&display=swap" 
+        rel="stylesheet">
+        <link rel="stylesheet" href="build/index-min.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <title>404 Page not found</title>
+        <script src="./src/js/nav.js" defer></script>
+    </head>
+    <body>
+        <!-- Navigation Bar / Nav slide out on mobile -->
+        <header class="flex">
+            <a href="#" class="flex logo">
+                <img src="/assets/general/PDlogo-white.svg" aria-hidden="true" alt="logo with upright keyboard and letters PD beside it"/>
+                <p class="fs-600 ff-sans-cond text-white">Philip Dometita</p>
+            </a>
+            <!-- stopPropagation() required to close slideout menu on outside click -->
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" onclick="event.stopPropagation()"><span class="sr-only" aria-expanded="false">Menu</span></button>
+            <nav id="temp">
+                <ul id="primary-navigation" tabindex="-1" data-visible="false" class="flex primary-navigation underline-indicators">
+                    <li id="homeNav" class="flex"><a href="index.html" class="fs-600 ff-sans-cond nav-link">Home</a></li>
+                    <li id="aboutNav" class="flex"><a href="index.html#about" class="fs-600 ff-sans-cond nav-link">About Me</a></li>
+                    <li id="projectsNav" class="project-dropdown flex">
+                        <a href="index.html#projects" class="fs-600 ff-sans-cond nav-link project-link">Projects</a>
+                        <div class="dropdown-content">
+                            <a class="fs-400 ff-sans-cond dropdown-1" href="./src/recipebook.html">Recipe Book</a>
+                            <a class="fs-400 ff-sans-cond dropdown-2" href="./src/ppm.html">Pak Patch Manager</a>
+                            <a class="fs-400 ff-sans-cond dropdown-3" href="./src/web-portfolio.html">Web Portfolio</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="notFound flex">
+            <h2 class="fs-700 ff-sans-normal text-black">404: Page not Found</h2>
+            <p class="fs-600 ff-sans-normal text-black">
+                The page you are looking for does not exist
+            </p>
+            <h3 class="fs-700 ff-sans-normal text-black">¯\_(ツ)_/¯</h3>
+            <a href="index.html" class="fs-400 ff-sans-normal text-light">Return to Home Page</a>
+
+        </main>
+        <!-- Footer section -->
+        <footer class="footer flex">
+            <div class="footer-info flex">
+                <img src="/assets/general/PDlogo-light.svg" alt="logo with upright keyboard and letters PD beside it" aria-hidden="true"/>
+                <p class="text-light ff-sans-normal">A website by Philip Dometita</p>
+            </div>
+            <div class="footer-contacts flex">
+                <h2 class="text-light ff-sans-normal">My links:</h2>
+                <div class="footer-contacts-imgs flex">
+                    <a href="mailto:philip.dometita@alumni.ucalgary.ca" class="contact-links">
+                        <img src="/assets/general/email-svgrepo-com.svg" alt="github logo icon"/>
+                        <h3 class="sr-only">Email Link</h3>
+                    </a>
+                    <a href="https://github.com/philipdometita/" target="_blank" class="contact-links">
+                        <img src="/assets/general/github-svgrepo-com.svg" alt="mail icon"/>
+                        <h3 class="sr-only">Github Link</h3>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

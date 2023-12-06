@@ -250,7 +250,7 @@ select {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  box-shadow: -3px 3px 5px hsl(var(--clr-dark)/1);
+  box-shadow: -3px 3px 5px hsl(var(--clr-black)/1);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
@@ -1084,6 +1084,44 @@ header .underline-indicators > .active, header .underline-indicators > [aria-sel
 }
 header .underline-indicators > .active .nav-link, header .underline-indicators > [aria-selected=true] .nav-link {
   color: hsl(var(--clr-white)/1);
+}
+
+.notFound {
+  height: 100dvh;
+  width: 100dvw;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(var(--clr-light)/1);
+  padding-inline: 2rem;
+  gap: 2rem;
+}
+.notFound a {
+  position: relative;
+  text-decoration: none;
+  background-color: hsl(var(--clr-dark)/1);
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.notFound a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: -5px 5px 5px hsl(var(--clr-black)/1);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.notFound a:hover {
+  transform: scale(1.1);
+}
+.notFound a:hover::after {
+  opacity: 1;
 }
 
 /* scss for Recipe Book project page */
