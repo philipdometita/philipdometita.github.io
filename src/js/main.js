@@ -17,24 +17,28 @@ const projectsNav = document.getElementById("projectsNav");
 let callback = (entries) => {
     entries.forEach(entry => {
         const intersecting = entry.isIntersecting;
-        if (entry.target.id === "title") {
-            if (intersecting) {
-                homeNav.classList.add("active");
-            } else {
-                homeNav.classList.remove("active");
-            }
-        } else if (entry.target.id === "about") {
-            if (intersecting) {
-                aboutNav.classList.add("active");
-            } else {
-                aboutNav.classList.remove("active");
-            }
-        } else if (entry.target.id === "projects") {
-            if (intersecting) {
-                projectsNav.classList.add("active");
-            } else {
-                projectsNav.classList.remove("active");
-            }
+        switch (entry.target.id) {
+            case "title":
+                if (intersecting) {
+                    homeNav.classList.add("active");
+                } else {
+                    homeNav.classList.remove("active");
+                }
+                break;
+            case "about":
+                if (intersecting) {
+                    aboutNav.classList.add("active");
+                } else {
+                    aboutNav.classList.remove("active");
+                }
+                break;
+            case "projects":
+                if (intersecting) {
+                    projectsNav.classList.add("active");
+                } else {
+                    projectsNav.classList.remove("active");
+                }
+                break;
         }
     })
 }
