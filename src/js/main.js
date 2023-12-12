@@ -54,12 +54,13 @@ const line = document.getElementById('line');
 document.getElementById('about-button').onclick = () => {
     aboutParagraph.classList.add('fade-in');
     aboutButton.classList.add('about-button--transition');
-    line.classList.add('expand')
+    line.classList.add('expand');
     aboutParagraph.style.maxHeight = aboutParagraph.scrollHeight + "px";
 };
 
 // adjusts the about paragraph size if the the window is resized when the about paragraph is visible
-window.onresize = () => {
+window.onresize = async () => {
+    await this.sleep(100); // added delay to fix paragraph not adjusting size when snapping window 
     if (aboutButton.classList.contains("about-button--transition")) {
         aboutParagraph.style.maxHeight = aboutParagraph.scrollHeight + "px";
     }
