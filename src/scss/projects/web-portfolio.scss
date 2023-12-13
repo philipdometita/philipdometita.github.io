@@ -65,12 +65,11 @@
                 max-width: 100%;
 
                 // remove borders between the about img afters
-                & > img {
+                & > picture > img {
                     border-bottom: 0px solid hsl(var(--clr-dark) / 1);
-                    background-color: black;
                 }
 
-                & > div > img{
+                & > div > picture > img{
                     border-top: 0px solid hsl(var(--clr-dark) / 1);
                 }
             }   

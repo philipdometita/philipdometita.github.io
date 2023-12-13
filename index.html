@@ -42,7 +42,7 @@
                 </ul>
             </nav>
         </header>
-        <main id="temp">
+        <main>
             <!-- Title section of home page -->
             <section id="title" class="flex home-section title-page">
                 <img src="./assets/general/profpsketchglasses_trnsp.svg" class="profile-pic" alt="black and white silhouette of man's face">
@@ -116,7 +116,12 @@
                         </p>
                     </article>
                     <article class="project grid projects--ppm">
-                        <a href="./src/ppm.html" class="project-thumb"><img src="./assets/ppm/inPPM-ray-so.png" alt="text interface of ppm with mods list and actions"/></a>
+                        <a href="./src/ppm.html" class="project-thumb">
+                            <picture>
+                                <source srcset="./assets/ppm/inPPM-ray-so.webp" type="image/webp"/>
+                                <img src="./assets/ppm/inPPM-ray-so.png" alt="text interface of ppm with mods list and actions"/>
+                            </picture>
+                        </a>
                         <a href="./src/ppm.html" class="project-title"><h3 class="fs-600 ff-sans-normal">Pak Patch Manager<span class="arrow-right" aria-hidden="true"></span></h3></a>
                         <p class="fs-300 ff-sans-normal text-black project-desc">
                             A simple Python program that is used to manage modification files for the game Monster Hunter: Rise, making adding and removing mods less painful.    

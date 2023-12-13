@@ -296,6 +296,11 @@ select {
   justify-content: center;
   flex-direction: column;
 }
+@supports (background-image: url("../assets/general/paint_pots.webp")) {
+  .title-page {
+    background-image: url("../assets/general/paint_pots.webp");
+  }
+}
 @media (max-width: 992px) and (orientation: landscape) {
   .title-page {
     flex-direction: row;
@@ -733,7 +738,7 @@ select {
 .projects .project .project-desc {
   grid-area: desc;
 }
-.projects .project img {
+.projects .project img, .projects .project picture {
   height: 100%;
   width: 100%;
   border-radius: 0.5rem;
@@ -1262,11 +1267,10 @@ header .underline-indicators > .active .nav-link, header .underline-indicators >
   flex-direction: column;
   max-width: 100%;
 }
-.web-portfolio .portfolio-comparisons .about-imgs .about-img-after > img {
+.web-portfolio .portfolio-comparisons .about-imgs .about-img-after > picture > img {
   border-bottom: 0px solid hsl(var(--clr-dark)/1);
-  background-color: black;
 }
-.web-portfolio .portfolio-comparisons .about-imgs .about-img-after > div > img {
+.web-portfolio .portfolio-comparisons .about-imgs .about-img-after > div > picture > img {
   border-top: 0px solid hsl(var(--clr-dark)/1);
 }
 @media (min-width: 992px) {

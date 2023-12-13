@@ -5,6 +5,12 @@
 .title-page {
     height: 100dvh;
     background-image: url("../assets/general/paint_pots.jpg");
+
+    // serve webp format image if browser supports it.
+    @supports(background-image: url("../assets/general/paint_pots.webp")) {
+        background-image: url("../assets/general/paint_pots.webp");
+    }
+
     background-size: cover;
     background-position: center 45%;
     background-attachment: fixed;
