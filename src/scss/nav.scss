@@ -135,7 +135,7 @@ header {
             }
 
             @media (min-width: b.$layout-breakpoint-laptop) {
-                &:hover {
+                &:hover, &:focus-within {
                     .dropdown-content {
                         @for $i from 1 through 3 {
                             .dropdown-#{$i} {

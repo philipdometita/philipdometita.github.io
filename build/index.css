@@ -364,13 +364,15 @@ select {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  outline: none;
   border: 0;
   vertical-align: middle;
   text-decoration: none;
   background: transparent;
   padding: 0;
   z-index: 11;
+}
+.about button:focus:not(:focus-visible) {
+  outline: none;
 }
 .about button.about-button {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
@@ -434,6 +436,7 @@ select {
   z-index: 9;
   max-height: 0;
   overflow: hidden;
+  visibility: hidden;
   grid-template-areas: ". education ." ". interests ." ". hobbies ." ". temp .";
 }
 .about .about-paragraph > div {
@@ -562,6 +565,7 @@ select {
   }
 }
 .about .fade-in {
+  visibility: visible;
   opacity: 1;
   transform: translateY(1rem);
 }
@@ -960,19 +964,19 @@ header .primary-navigation .project-dropdown.active .dropdown-content {
   top: calc(100% + 0.2rem);
 }
 @media (min-width: 992px) {
-  header .primary-navigation .project-dropdown:hover .dropdown-content .dropdown-1 {
+  header .primary-navigation .project-dropdown:hover .dropdown-content .dropdown-1, header .primary-navigation .project-dropdown:focus-within .dropdown-content .dropdown-1 {
     transition: all 390ms ease-in-out;
     transition-delay: 110ms;
     transform: rotateX(0deg);
     opacity: 1;
   }
-  header .primary-navigation .project-dropdown:hover .dropdown-content .dropdown-2 {
+  header .primary-navigation .project-dropdown:hover .dropdown-content .dropdown-2, header .primary-navigation .project-dropdown:focus-within .dropdown-content .dropdown-2 {
     transition: all 390ms ease-in-out;
     transition-delay: 220ms;
     transform: rotateX(0deg);
     opacity: 1;
   }
-  header .primary-navigation .project-dropdown:hover .dropdown-content .dropdown-3 {
+  header .primary-navigation .project-dropdown:hover .dropdown-content .dropdown-3, header .primary-navigation .project-dropdown:focus-within .dropdown-content .dropdown-3 {
     transition: all 390ms ease-in-out;
     transition-delay: 330ms;
     transform: rotateX(0deg);

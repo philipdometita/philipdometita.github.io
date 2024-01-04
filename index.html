@@ -32,22 +32,62 @@
     <body id="mainPage">
         <!-- Navigation Bar / Nav slide out on mobile -->
         <header class="flex">
-            <a href="#" class="flex logo">
+            <a href="#" class="flex logo" aria-label="Return to the top of the home page">
                 <img src="/assets/general/PDlogo-white.svg" aria-hidden="true" alt="logo with upright keyboard and letters PD beside it"/>
                 <p class="fs-600 ff-sans-cond text-white">Philip Dometita</p>
             </a>
             <!-- stopPropagation() required to close slideout menu on outside click -->
             <button class="mobile-nav-toggle" aria-controls="primary-navigation" onclick="event.stopPropagation()"><span class="sr-only" aria-expanded="false">Menu</span></button>
-            <nav id="temp">
+            <nav>
                 <ul id="primary-navigation" tabindex="-1" data-visible="false" class="flex primary-navigation underline-indicators">
-                    <li id="homeNav" class="flex"><a href="#" class="fs-600 ff-sans-cond nav-link">Home</a></li>
-                    <li id="aboutNav" class="flex"><a href="#about" class="fs-600 ff-sans-cond nav-link">About Me</a></li>
+                    <li id="homeNav" class="flex">
+                        <a 
+                            href="#" 
+                            class="fs-600 ff-sans-cond nav-link" 
+                            aria-label="Return to the top of the home page"
+                        >
+                            Home
+                        </a>
+                    </li>
+                    <li id="aboutNav" class="flex">
+                        <a 
+                            href="#about" 
+                            class="fs-600 ff-sans-cond nav-link"
+                            aria-label="Go to the about me section"
+                        >
+                            About Me
+                        </a>
+                    </li>
                     <li id="projectsNav" class="project-dropdown flex">
-                        <a href="#projects" class="fs-600 ff-sans-cond nav-link project-link">Projects</a>
+                        <a 
+                            href="#projects" 
+                            class="fs-600 ff-sans-cond nav-link project-link"
+                            aria-label="Go to the projects section"
+                        >
+                            Projects
+                        </a>
                         <div class="dropdown-content">
-                            <a class="fs-400 ff-sans-cond dropdown-1" href="./src/recipebook.html">Recipe Book</a>
-                            <a class="fs-400 ff-sans-cond dropdown-2" href="./src/ppm.html">Pak Patch Manager</a>
-                            <a class="fs-400 ff-sans-cond dropdown-3" href="./src/web-portfolio.html">Web Portfolio</a>
+                            <a 
+                                class="fs-400 ff-sans-cond dropdown-1" 
+                                href="./src/recipebook.html"
+                                aria-label="go to the Recipe Book project page"
+                            >
+                                Recipe Book
+                            </a>
+                            <a 
+                                class="fs-400 ff-sans-cond dropdown-2" 
+                                href="./src/ppm.html"
+                                aria-label="go to the Pak Patch Manager project page"
+                            >
+                                Pak Patch Manager
+                            </a>
+                            <a 
+                                class="fs-400 ff-sans-cond dropdown-3" 
+                                href="./src/web-portfolio.html"
+                                aria-label="go to the Web portfolio project page"
+                            >
+                                Web Portfolio
+                            </a>
                         </div>
                     </li>
                 </ul>
@@ -119,28 +159,62 @@
                 <h2 class="fs-700 ff-sans-normal">Projects</h2>
                 <div class="projects flex">
                     <article class="project grid projects--recipe-book">
-                        <a href="./src/recipebook.html" class="project-thumb"><img src="./assets/recipeBook/recipe-book-splash.svg" alt="smiling face with a chef's hat with Recipe Book written below"/></a>
-                        <a href="./src/recipebook.html" class="project-title"><h3 class="fs-600 ff-sans-normal">Recipe Book<span class="arrow-right" aria-hidden="true"></span></h3></a>
+                        <a 
+                            href="./src/recipebook.html" 
+                            class="project-thumb"
+                            aria-label="Go to the recipe book project page"
+                        >
+                            <img src="./assets/recipeBook/recipe-book-splash.svg" alt="smiling face with a chef's hat with Recipe Book written below"/>
+                        </a>
+                        <a 
+                            href="./src/recipebook.html" 
+                            class="project-title"
+                            aria-label="Go to the recipe book project page"
+                        >
+                            <h3 class="fs-600 ff-sans-normal">Recipe Book<span class="arrow-right" aria-hidden="true"></span></h3>
+                        </a>
                         <p class="fs-300 ff-sans-normal text-black project-desc">
                             An Android app made in React Native.
                             Created for the purpose of keeping track of recipes in one place. Inspired by an old and beat-up recipe book kept by my mother.
                         </p>
                     </article>
                     <article class="project grid projects--ppm">
-                        <a href="./src/ppm.html" class="project-thumb">
+                        <a 
+                            href="./src/ppm.html" 
+                            class="project-thumb"
+                            aria-label="Go to the Pak patch manager project page"
+                        >
                             <picture>
                                 <source srcset="./assets/ppm/inPPM-ray-so.webp" type="image/webp"/>
                                 <img src="./assets/ppm/inPPM-ray-so.png" alt="text interface of ppm with mods list and actions"/>
                             </picture>
                         </a>
-                        <a href="./src/ppm.html" class="project-title"><h3 class="fs-600 ff-sans-normal">Pak Patch Manager<span class="arrow-right" aria-hidden="true"></span></h3></a>
+                        <a 
+                            href="./src/ppm.html" 
+                            class="project-title"
+                            aria-label="Go to the Pak patch manager project page"
+                        >
+                            <h3 class="fs-600 ff-sans-normal">Pak Patch Manager<span class="arrow-right" aria-hidden="true"></span></h3>
+                        </a>
                         <p class="fs-300 ff-sans-normal text-black project-desc">
                             A simple Python program that is used to manage modification files for the game Monster Hunter: Rise, making adding and removing mods less painful.    
                         </p>
                     </article>
                     <article class="project grid projects--portfolio">
-                        <a href="./src/web-portfolio.html" class="project-thumb"><img src="./assets/general/PDlogo-light.svg"></a>
-                        <a href="./src/web-portfolio.html" class="project-title"><h3 class="fs-600 ff-sans-normal">Web Portfolio<span class="arrow-right" aria-hidden="true"></span></h3></a>
+                        <a 
+                            href="./src/web-portfolio.html" 
+                            class="project-thumb"
+                            aria-label="Go to the web portfolio project page"
+                        >
+                            <img src="./assets/general/PDlogo-light.svg">
+                        </a>
+                        <a 
+                            href="./src/web-portfolio.html" 
+                            class="project-title"
+                            aria-label="Go to the web portfolio project page"
+                        >
+                            <h3 class="fs-600 ff-sans-normal">Web Portfolio<span class="arrow-right" aria-hidden="true"></span></h3>
+                        </a>
                         <p class="fs-300 ff-sans-normal text-black project-desc">
                             A web portfolio made in HTML5, SCSS, and vanilla JavaScript to showcase who I am and projects I have worked on.
                         </p>
@@ -157,11 +231,20 @@
             <div class="footer-contacts flex">
                 <h2 class="text-light ff-sans-normal">My links:</h2>
                 <div class="footer-contacts-imgs flex">
-                    <a href="mailto:philadometita@gmail.com" class="contact-links">
+                    <a 
+                        href="mailto:philadometita@gmail.com" 
+                        class="contact-links"
+                        aria-label="Email me"
+                    >
                         <img src="/assets/general/email-svgrepo-com.svg" alt="mail icon"/>
                         <h3 class="sr-only">Email Link</h3>
                     </a>
-                    <a href="https://github.com/philipdometita/" target="_blank" class="contact-links">
+                    <a 
+                        href="https://github.com/philipdometita/" 
+                        target="_blank" 
+                        class="contact-links"
+                        aria-label="Visit my Github page"
+                    >
                         <img src="/assets/general/github-svgrepo-com.svg" alt="github icon"/>
                         <h3 class="sr-only">Github Link</h3>
                     </a>
