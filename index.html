@@ -26,73 +26,13 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
         <title>Philip Dometita | Web Portfolio</title>
+        <script src="./src/js/header.js" defer></script>
+        <script src="./src/js/footer.js" defer></script>
         <script src="./src/js/main.js" defer></script>
         <script src="./src/js/nav.js" defer></script>
     </head>
-    <body id="mainPage">
-        <!-- Navigation Bar / Nav slide out on mobile -->
-        <header class="flex">
-            <a href="#" class="flex logo" aria-label="Return to the top of the home page">
-                <img src="/assets/general/PDlogo-white.svg" aria-hidden="true" alt="logo with upright keyboard and letters PD beside it"/>
-                <p class="fs-600 ff-sans-cond text-white">Philip Dometita</p>
-            </a>
-            <!-- stopPropagation() required to close slideout menu on outside click -->
-            <button class="mobile-nav-toggle" aria-controls="primary-navigation" onclick="event.stopPropagation()"><span class="sr-only" aria-expanded="false">Menu</span></button>
-            <nav>
-                <ul id="primary-navigation" tabindex="-1" data-visible="false" class="flex primary-navigation underline-indicators">
-                    <li id="homeNav" class="flex">
-                        <a 
-                            href="#" 
-                            class="fs-600 ff-sans-cond nav-link" 
-                            aria-label="Return to the top of the home page"
-                        >
-                            Home
-                        </a>
-                    </li>
-                    <li id="aboutNav" class="flex">
-                        <a 
-                            href="#about" 
-                            class="fs-600 ff-sans-cond nav-link"
-                            aria-label="Go to the about me section"
-                        >
-                            About Me
-                        </a>
-                    </li>
-                    <li id="projectsNav" class="project-dropdown flex">
-                        <a 
-                            href="#projects" 
-                            class="fs-600 ff-sans-cond nav-link project-link"
-                            aria-label="Go to the projects section"
-                        >
-                            Projects
-                        </a>
-                        <div class="dropdown-content">
-                            <a 
-                                class="fs-400 ff-sans-cond dropdown-1" 
-                                href="./src/recipebook.html"
-                                aria-label="go to the Recipe Book project page"
-                            >
-                                Recipe Book
-                            </a>
-                            <a 
-                                class="fs-400 ff-sans-cond dropdown-2" 
-                                href="./src/ppm.html"
-                                aria-label="go to the Pak Patch Manager project page"
-                            >
-                                Pak Patch Manager
-                            </a>
-                            <a 
-                                class="fs-400 ff-sans-cond dropdown-3" 
-                                href="./src/web-portfolio.html"
-                                aria-label="go to the Web portfolio project page"
-                            >
-                                Web Portfolio
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+    <body>
+        <!-- header contained within header.js  -->
         <main>
             <!-- Title section of home page -->
             <section id="title" class="flex home-section title-page">
@@ -222,34 +162,6 @@
                 </div>
             </section>
         </main> 
-        <!-- Footer section -->
-        <footer class="footer flex">
-            <div class="footer-info flex">
-                <img src="/assets/general/PDlogo-light.svg" alt="logo with upright keyboard and letters PD beside it" aria-hidden="true"/>
-                <p class="text-light ff-sans-normal">A website by Philip Dometita</p>
-            </div>
-            <div class="footer-contacts flex">
-                <h2 class="text-light ff-sans-normal">My links:</h2>
-                <div class="footer-contacts-imgs flex">
-                    <a 
-                        href="mailto:philadometita@gmail.com" 
-                        class="contact-links"
-                        aria-label="my email link"
-                    >
-                        <img src="/assets/general/email-svgrepo-com.svg" alt="mail icon"/>
-                        <h3 class="sr-only">Email Link</h3>
-                    </a>
-                    <a 
-                        href="https://github.com/philipdometita/" 
-                        target="_blank" 
-                        class="contact-links"
-                        aria-label="my github link"
-                    >
-                        <img src="/assets/general/github-svgrepo-com.svg" alt="github icon"/>
-                        <h3 class="sr-only">Github Link</h3>
-                    </a>
-                </div>
-            </div>
-        </footer>
+        <!-- Footer contained within footer.js -->
     </body>
 </html>
