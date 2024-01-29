@@ -73,8 +73,6 @@ header {
         @media (min-width: b.$layout-breakpoint-laptop) {
             align-items: center;
             li {
-                height: 100%;
-                max-height: 100%;
                 align-items: center;
                 white-space: nowrap;
                 
@@ -86,26 +84,37 @@ header {
 
         // drop down animation based on Dropdown Animations with CSS Transforms
         // by Cody Pearce
-        .project-dropdown {
+        .dropdown {
             position: relative;
+            flex-direction: column;
             
-            .dropdown-content {
-                @include transitionCB;
-                position: absolute;
-                left: 0;
-                top: 100%;
-                height: 0%;
-                min-width: 100%;
-                z-index: 100; 
+            .project-dropdown-content,
+            .fem-dropdown-content {
 
                 .active {
                     color: hsl( var(--clr-white) / 1 );
                 }
-                
+
                 // do transitions for non slide out nav bar
                 @media(min-width: b.$layout-breakpoint-laptop) {
+                    @include transitionCB;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    height: 0%;
+                    min-width: 100%;
+                    z-index: 100; 
+
                     @for $i from 1 through 3 {
-                        .dropdown-#{$i} {
+                        .project-dropdown-#{$i} {
+                            transform-origin: top center;
+                            opacity: 0;
+                            transform: rotateX(-90deg);
+                            background-color: hsl(var(--clr-dark) / 1);
+                        }
+                    }
+                    @for $i from 1 through 2 {
+                        .fem-dropdown-#{$i} {
                             transform-origin: top center;
                             opacity: 0;
                             transform: rotateX(-90deg);
@@ -127,18 +136,21 @@ header {
                 }              
             }
 
-            // keeps dropdown flush with nav bar when projects is active
-            &.active {
-                .dropdown-content {
-                    top: calc(100% + .2rem);
-                }
-            }
-
             @media (min-width: b.$layout-breakpoint-laptop) {
                 &:hover, &:focus-within {
-                    .dropdown-content {
+                    .project-dropdown-content {
                         @for $i from 1 through 3 {
-                            .dropdown-#{$i} {
+                            .project-dropdown-#{$i} {
+                                transition: all 390ms ease-in-out;
+                                transition-delay: $i * 110ms;
+                                transform: rotateX(0deg);
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .fem-dropdown-content {
+                        @for $i from 1 through 2 {
+                            .fem-dropdown-#{$i} {
                                 transition: all 390ms ease-in-out;
                                 transition-delay: $i * 110ms;
                                 transform: rotateX(0deg);
@@ -178,7 +190,8 @@ header {
             }
 
             // indent drop down links to separate from main categories
-            .dropdown-content {
+            .project-dropdown-content,
+            .fem-dropdown-content {
                 a {
                     margin-left: 2rem;
                     width: 100%;
@@ -256,10 +269,10 @@ header {
 
     // indicators to show if nav link is active or hovered
     .underline-indicators {
-        & > * {
+        & > li > a {
             cursor: pointer;
             position: relative;
-            padding-inline: 2rem;
+            padding-left: 1.5rem;
             border: 0;
             @media (max-width: b.$layout-breakpoint-tablet) {
                 padding-block: 1rem;
@@ -270,7 +283,7 @@ header {
                 width: 0%;
                 height: .2rem;
                 bottom: 0;
-                left: 0;
+                left: 50%;
                 background-color: hsl( var(--clr-white) / .5 );
                 transition: all ease-in-out .2s;
             }
@@ -294,7 +307,14 @@ header {
             .nav-link {
                 color: hsl( var(--clr-white) / 1 );
             }
-            border-bottom: .2rem solid hsl( var(--clr-white) / 1 );
+
+            & > a::after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                left: 0;
+                background-color: hsl( var(--clr-white) / 1 );
+            }
         } 
     }
 }

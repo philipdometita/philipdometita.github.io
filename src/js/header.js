@@ -33,7 +33,7 @@ const header = `
                         About Me
                     </a>
                 </li>
-                <li id="projectsNav" class="project-dropdown active flex">
+                <li id="projectsNav" class="dropdown flex">
                     <a 
                         href="/index.html#projects" 
                         class="fs-600 ff-sans-cond nav-link project-link"
@@ -41,27 +41,45 @@ const header = `
                     >
                         Projects
                     </a>
-                    <div class="dropdown-content">
+                    <div class="project-dropdown-content">
                         <a 
-                            class="fs-400 ff-sans-cond dropdown-1" 
+                            class="fs-400 ff-sans-cond project-dropdown-1" 
                             href="/src/recipebook.html"
                             aria-label="Go to recipe book project page"
                         >
                             Recipe Book
                         </a>
                         <a 
-                            class="fs-400 ff-sans-cond dropdown-2" 
+                            class="fs-400 ff-sans-cond project-dropdown-2" 
                             href="/src/ppm.html"
                             aria-label="Go to Pak patch manager project page"
                         >
                             Pak Patch Manager
                         </a>
                         <a 
-                            class="fs-400 ff-sans-cond dropdown-3" 
+                            class="fs-400 ff-sans-cond project-dropdown-3" 
                             href="/src/web-portfolio.html"
                             aria-label="Go to web portfolio project page"
                         >
                             Web Portfolio
+                        </a>
+                    </div>
+                </li>
+                <li id="femNav" class="dropdown flex">
+                    <a 
+                        href="/index.html#projects" 
+                        class="fs-600 ff-sans-cond nav-link project-link"
+                        aria-label="Go to projects section on the home page"
+                    >
+                        Front End Mentor
+                    </a>
+                    <div class="fem-dropdown-content">
+                        <a 
+                            class="fs-400 ff-sans-cond fem-dropdown-1" 
+                            href="/src/splitter.html"
+                            aria-label="Go to splitter: tip calculator page"
+                        >
+                            Splitter: Tip Calculator
                         </a>
                     </div>
                 </li>
