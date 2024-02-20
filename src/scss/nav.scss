@@ -126,7 +126,7 @@ header {
                 // change color of nav link on hover
                 a {
                     @include transitionCB;
-                    color: hsl( var(--clr-light) / 1);
+                    color: hsl( var(--clr-white) / .5);
                     padding: 1rem;
                     text-decoration: none;
                     display: block;

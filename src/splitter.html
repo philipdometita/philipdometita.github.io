@@ -4,36 +4,132 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Philip Dometita">
-        <meta name="description" content="Python Script to manage Pak Patch mod files for Monster Hunter: Rise">
+        <meta name="description" content="Frontend Mentor tip calculator challenge ">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link 
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap&family=Sofia+Sans+Condensed:wght@200..900&display=swap" 
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap&family=Sofia+Sans+Condensed:wght@200..900&display=swap&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" 
             rel="stylesheet"
             media="print"
             onload="this.media='all'"
         >
         <noscript>
             <link
-                href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap&family=Sofia+Sans+Condensed:wght@200..900&display=swap"
+                href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap&family=Sofia+Sans+Condensed:wght@200..900&display=swap&family=Space+Mono:ital,wght@700;1,400;1,700&display=swap"
                 rel="stylesheet"
                 type="text/css"
             >
         </noscript>
-        <link rel="stylesheet" href="../../build/index-min.css">
+        <link rel="stylesheet" href="../../build/index.css">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/fem/splitter/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/fem/splitter/favicon-32x32.png">
         <link rel="manifest" href="/site.webmanifest">
         <title>Splitter: Tip Calculator</title>
         <script src="./js/header.js" defer></script>
         <script src="./js/footer.js" defer></script>
         <script src="./js/nav.js" defer></script>
+        <script src="./js/frontendmentor/splitter.js" defer></script>
     </head>
     <body>
         <main class="splitter project-page flex">
-            <h1 class="fs-700 ff-sans-normal text-black">This page is still under construction</h1>
-            <img src="../assets/general/construction-worker-svgrepo-com.svg">
+            <!-- Logo section -->
+            <img class="splitter-logo" src="/assets/fem/splitter/logo.svg" alt="logo with the word splitter with S P L I above T T E R">
+            <!-- main body -->
+            <div class="splitter-body flex">
+                <!-- inputs section -->
+                <div class="splitter-inputs">
+                    <!-- bill input section -->
+                    <div class="text-input flex">
+                        <label for="bill" class="text-input-label text-dark-g-cyan">Bill</label>
+                        <span class="text-box-symbol flex">
+                            <img src="/assets/fem/splitter/icon-dollar.svg">
+                            <input id="bill" name="bill" type="number" min="0" step="0.01" placeholder="0" class="fs-600 text-input-box">
+                        </span>
+                    </div>
+                    <!-- tip amount section -->
+                    <div class="tip-amount">
+                        <p class="tip-amount-prompt text-dark-g-cyan">Select Tip %</p>
+                        <div id="tip-inputs" class="grid tip-inputs">
+                            <input id="tip-five" name="tip-amount" type="radio" value="5" class="tip-button tip-five">
+                            <label for="tip-five" class="tip-label fs-600">5%</label>
+    
+                            <input id="tip-ten" name="tip-amount" type="radio" value="10" class="tip-button tip-ten">
+                            <label for="tip-ten" class="tip-label fs-600">10%</label>
+    
+                            <input id="tip-fifteen" name="tip-amount" type="radio" value="15" class="tip-button tip-fifteen">
+                            <label for="tip-fifteen" class="tip-label fs-600">15%</label>
+    
+                            <input id="tip-twenty" name="tip-amount" type="radio" value="20" class="tip-button tip-twenty">
+                            <label for="tip-twenty" class="tip-label fs-600">20%</label>
+    
+                            <input id="tip-fifty" name="tip-amount" type="radio" value="50" class="tip-button tip-fifty">
+                            <label for="tip-fifty" class="tip-label fs-600">50%</label>
+                            
+                            <!-- custom tip section -->
+                            <div>
+                                <label for="tip-custom" class="sr-only">custom</label>
+                                <input id="tip-custom" name="tip-custom" type="number" min="0" placeholder="Custom" class=" fs-600 tip-custom text-v-dark-cyan">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- number of people input -->
+                    <div class="text-input flex">
+                        <div id="num-people-label" class="num-people-label flex">
+                            <label for="num-people" class="text-input-label text-dark-g-cyan">Number of People</label>
+                            <p class="num-people-error text-error">Can't be zero</p>
+                        </div>
+                        <span class="text-box-symbol flex">
+                            <img src="/assets/fem/splitter/icon-person.svg">
+                            <input id="num-people" name="num-people" type="number" min="0" step="1" placeholder="0" class="fs-600 text-input-box">
+                        </span>
+                    </div>
+                </div>
+                <!-- results section -->
+                <div class="splitter-result flex">
+                    <div class="tip-per flex">
+                        <div class="result-type flex">
+                            <p class="text-v-light-g-cyan">Tip Amount</p>
+                            <p class="text-g-cyan fs-200">/ person</p>
+                        </div>
+                        <p id="tip-per-result" class="fs-750 text-strong-cyan">$0.00</p>
+                    </div>
+                    <div class="total-per flex">
+                        <div class="result-type flex">
+                            <p class="text-v-light-g-cyan">Total</p>
+                            <p class="text-g-cyan fs-200">/ person</p>
+                        </div>
+                        <p id="total-per-result" class="fs-750 text-strong-cyan">$0.00</p>
+                    </div>
+                    <!-- reset button -->
+                    <div class="reset">
+                        <button type="reset" id="reset-btn" class="text-v-dark-cyan fs-600">RESET</button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="fem-link flex">
+                <p class="text-v-dark-cyan fs-400">Frontend Mentor project "Tip Calculator": </p>
+                <a 
+                    class="fem-logo-link" 
+                    href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
+                    aria-label="Frontend Mentor link"
+                >
+                    <img src="/assets/fem/frontendmentor-logo.svg" alt="frontend mentor logo of face winking">
+                </a>
+            </div>
+
+            <div class="project-github--link flex">
+                <p class="text-v-dark-cyan fs-400">Check out the source code on my web portfolio repo:</p>
+                <a 
+                    href="https://github.com/philipdometita/philipdometita.github.io" 
+                    target="_blank"
+                    aria-label="web portfolio github link"
+                >
+                    <img src="../assets/general/github-svgrepo-com.svg" alt="github icon">
+                    <h3 class="sr-only">Github Link</h3>
+                </a>
+            </div>
         </main>
     </body>
 </html>
