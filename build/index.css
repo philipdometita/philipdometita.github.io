@@ -285,6 +285,123 @@ select {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
+.project {
+  position: relative;
+  z-index: 0;
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 1.5rem;
+  margin: 0.5rem;
+  grid-template-areas: "thumb" "title" "desc";
+}
+@media (min-width: 600px) {
+  .project {
+    gap: 1rem;
+    grid-template-areas: "thumb thumb title title" "thumb thumb desc desc";
+  }
+}
+@media (min-width: 992px) {
+  .project {
+    width: 45%;
+    margin: 1rem;
+    grid-template-areas: "thumb thumb title title" "desc desc desc desc";
+  }
+}
+@media (min-width: 1200px) {
+  .project {
+    grid-template-areas: "thumb thumb title title" "thumb thumb desc desc";
+  }
+}
+.project::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -100%;
+  top: -150%;
+  width: 300%;
+  height: 400%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 100%;
+  background-image: linear-gradient(to top, hsl(var(--clr-white)/1), 70%, hsl(var(--clr-light)/1)), linear-gradient(to top, hsl(var(--clr-dark)/1), 80%, hsl(var(--clr-light)/1));
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+}
+.project::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: hsl(var(--clr-light)/1);
+  border-radius: 50px;
+}
+.project:hover:before {
+  opacity: 1;
+  transform: rotate(180deg);
+}
+.project .project-thumb {
+  grid-area: thumb;
+  position: relative;
+  margin: 1rem;
+  aspect-ratio: 1/1;
+  place-self: center;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+.project .project-thumb::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  border-radius: 5%;
+  box-shadow: -5px 5px 5px hsl(var(--clr-dark)/1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+.project .project-thumb:hover {
+  transform: scale(1.1, 1.1);
+}
+.project .project-thumb:hover::after {
+  opacity: 1;
+}
+@media (min-width: 3840px) {
+  .project .project-thumb {
+    max-width: 80%;
+  }
+}
+.project .project-title {
+  grid-area: title;
+  align-self: flex-end;
+  padding-block: 1rem;
+  color: hsl(var(--clr-black)/1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+@media (min-width: 600px) {
+  .project .project-title .arrow-right {
+    padding: 6px;
+  }
+}
+.project .project-title:hover {
+  color: hsl(var(--clr-dark)/1);
+}
+.project .project-title:hover .arrow-right {
+  transform: translate(0.3rem, 0) rotate(-45deg);
+  border: solid hsl(var(--clr-dark)/1);
+  border-width: 0 3px 3px 0;
+}
+.project .project-desc {
+  grid-area: desc;
+}
+.project img, .project picture {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
 /* scss for the title section of the main page */
 .title-page {
   height: 100dvh;
@@ -630,122 +747,6 @@ select {
     flex-direction: row;
     flex-wrap: wrap;
   }
-}
-.projects .project {
-  position: relative;
-  z-index: 0;
-  border-radius: 50px;
-  overflow: hidden;
-  padding: 1.5rem;
-  margin: 0.5rem;
-  grid-template-areas: "thumb" "title" "desc";
-}
-@media (min-width: 600px) {
-  .projects .project {
-    gap: 1rem;
-    grid-template-areas: "thumb thumb title title" "thumb thumb desc desc";
-  }
-}
-@media (min-width: 992px) {
-  .projects .project {
-    width: 45%;
-    margin: 1rem;
-    grid-template-areas: "thumb thumb title title" "desc desc desc desc";
-  }
-}
-@media (min-width: 1200px) {
-  .projects .project {
-    grid-template-areas: "thumb thumb title title" "thumb thumb desc desc";
-  }
-}
-.projects .project::before {
-  content: "";
-  position: absolute;
-  z-index: -2;
-  left: -100%;
-  top: -150%;
-  width: 300%;
-  height: 400%;
-  background-repeat: no-repeat;
-  background-size: 50% 50%, 50% 50%;
-  background-position: 0 0, 100% 100%;
-  background-image: linear-gradient(to top, hsl(var(--clr-white)/1), 70%, hsl(var(--clr-light)/1)), linear-gradient(to top, hsl(var(--clr-dark)/1), 80%, hsl(var(--clr-light)/1));
-  opacity: 0;
-  transition: transform 1s ease, opacity 1s ease;
-}
-.projects .project::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 6px;
-  top: 6px;
-  width: calc(100% - 12px);
-  height: calc(100% - 12px);
-  background: hsl(var(--clr-light)/1);
-  border-radius: 50px;
-}
-.projects .project:hover:before {
-  opacity: 1;
-  transform: rotate(180deg);
-}
-.projects .project .project-thumb {
-  grid-area: thumb;
-  position: relative;
-  margin: 1rem;
-  aspect-ratio: 1/1;
-  place-self: center;
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-.projects .project .project-thumb::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  border-radius: 5%;
-  box-shadow: -5px 5px 5px hsl(var(--clr-dark)/1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-.projects .project .project-thumb:hover {
-  transform: scale(1.1, 1.1);
-}
-.projects .project .project-thumb:hover::after {
-  opacity: 1;
-}
-@media (min-width: 3840px) {
-  .projects .project .project-thumb {
-    max-width: 80%;
-  }
-}
-.projects .project .project-title {
-  grid-area: title;
-  align-self: flex-end;
-  padding-block: 1rem;
-  color: hsl(var(--clr-black)/1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-@media (min-width: 600px) {
-  .projects .project .project-title .arrow-right {
-    padding: 6px;
-  }
-}
-.projects .project .project-title:hover {
-  color: hsl(var(--clr-dark)/1);
-}
-.projects .project .project-title:hover .arrow-right {
-  transform: translate(0.3rem, 0) rotate(-45deg);
-  border: solid hsl(var(--clr-dark)/1);
-  border-width: 0 3px 3px 0;
-}
-.projects .project .project-desc {
-  grid-area: desc;
-}
-.projects .project img, .projects .project picture {
-  height: 100%;
-  width: 100%;
-  border-radius: 0.5rem;
 }
 .projects .project.projects--recipe-book img {
   background-color: hsl(var(--clr-gold)/1);
@@ -1633,6 +1634,55 @@ input[type=number] {
 
 .project-github--link {
   padding: 0 3rem 3rem 3rem;
+}
+
+.frontendmentor {
+  width: 100dvw;
+  max-width: 100%;
+  min-height: 100dvh;
+  padding: 5rem 2rem;
+  flex-direction: column;
+  background-color: hsl(var(--clr-light)/1);
+}
+.frontendmentor a {
+  text-decoration: none;
+}
+.frontendmentor .fem-title {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.frontendmentor .fem-title a {
+  width: 50%;
+  background-color: hsl(var(--clr-white)/1);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 992px) {
+  .frontendmentor .fem-title a {
+    max-width: 20%;
+  }
+}
+.frontendmentor .fem-challenges {
+  max-height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+@media (min-width: 992px) {
+  .frontendmentor .fem-challenges {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.frontendmentor .fem-challenges .project.projects--splitter img {
+  background-color: hsl(var(--clr-light-grayish-cyan)/1);
+  padding: 2rem;
 }
 
 /* Main scss file that compiles to build/index.css */

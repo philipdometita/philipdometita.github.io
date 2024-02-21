@@ -1,5 +1,16 @@
 // JS file that contains the header html to be added to the pages
 
+// add active class to project or frontend mentor if those are the current pages
+// for the underline indicator
+let projectActiveClass = "";
+let femActiveClass = "";
+const projects = ["ppm", "recipebook", "web-portfolio"];
+const currUrl = window.location.href;
+
+if (currUrl.includes("frontendmentor")) femActiveClass = "active";
+
+if (projects.some(el => currUrl.includes(el))) projectActiveClass = "active";
+
 // header html
 const header = `
     <header class="flex">
@@ -33,7 +44,7 @@ const header = `
                         About Me
                     </a>
                 </li>
-                <li id="projectsNav" class="dropdown flex">
+                <li id="projectsNav" class="dropdown flex ${projectActiveClass}">
                     <a 
                         href="/index.html#projects" 
                         class="fs-600 ff-sans-cond nav-link project-link"
@@ -65,9 +76,9 @@ const header = `
                         </a>
                     </div>
                 </li>
-                <li id="femNav" class="dropdown flex">
+                <li id="femNav" class="dropdown flex ${femActiveClass}">
                     <a 
-                        href="/index.html#projects" 
+                        href="/src/frontendmentor.html" 
                         class="fs-600 ff-sans-cond nav-link project-link"
                         aria-label="Go to projects section on the home page"
                     >
@@ -76,7 +87,7 @@ const header = `
                     <div class="fem-dropdown-content">
                         <a 
                             class="fs-400 ff-sans-cond fem-dropdown-1" 
-                            href="/src/splitter.html"
+                            href="/src/frontendmentor/splitter.html"
                             aria-label="Go to splitter: tip calculator page"
                         >
                             Splitter: Tip Calculator
