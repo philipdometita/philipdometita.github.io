@@ -15,7 +15,7 @@ if (projects.some(el => currUrl.includes(el))) projectActiveClass = "active";
 const header = `
     <header class="flex">
         <a 
-            href="/index.html" 
+            href="/index.html#" 
             class="flex logo"
             aria-label="Return to home page"
         >
@@ -28,7 +28,7 @@ const header = `
             <ul id="primary-navigation" tabindex="-1" data-visible="false" class="flex primary-navigation underline-indicators">
                 <li id="homeNav" class="flex">
                     <a 
-                        href="/index.html" 
+                        href="/index.html#" 
                         class="fs-600 ff-sans-cond nav-link"
                         aria-label="Return to home page"
                     >
