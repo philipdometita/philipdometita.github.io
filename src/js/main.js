@@ -60,6 +60,7 @@ document.getElementById('about-button').onclick = () => {
     aboutButton.classList.add('about-button--transition');
     line.classList.add('expand');
     aboutParagraph.style.maxHeight = aboutParagraph.scrollHeight + "px";
+    document.getElementById("about").scrollIntoView();
 };
 
 // adjusts the about paragraph size if the the window is resized when the about paragraph is visible

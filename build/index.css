@@ -476,6 +476,7 @@ select {
   justify-content: center;
   min-height: 100dvh;
   padding-block: 2rem;
+  scroll-margin-top: 5dvh;
 }
 .about button {
   position: relative;
