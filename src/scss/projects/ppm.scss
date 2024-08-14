@@ -10,7 +10,8 @@
         flex-direction: column;
         --flow-space: 1.5rem;
         & > p {
-            max-width: 90%;
+            max-width: 85%;
+            align-self: center;
         }
         .PPM-img {
             align-self: center;
@@ -25,6 +26,10 @@
 
         @media (min-width: b.$layout-breakpoint-tablet) {
             width: 80%;
+
+            & > h2 {
+                align-self: center;
+            }
         }
     }
 } 

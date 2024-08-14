@@ -1179,6 +1179,7 @@ header .underline-indicators > .active > a::after, header .underline-indicators 
 }
 .recipe-book .recipe-book--features p {
   max-width: 90%;
+  align-self: center;
 }
 .recipe-book .recipe-book--features img {
   max-width: 90%;
@@ -1204,6 +1205,9 @@ header .underline-indicators > .active > a::after, header .underline-indicators 
 @media (min-width: 600px) {
   .recipe-book .recipe-book--features p {
     max-width: 70%;
+  }
+  .recipe-book .recipe-book--features > h2 {
+    align-self: center;
   }
   .recipe-book .recipe-book--features .recipe-book--img {
     min-width: 0;
@@ -1234,7 +1238,8 @@ header .underline-indicators > .active > a::after, header .underline-indicators 
   --flow-space: 1.5rem;
 }
 .ppm .ppm--features > p {
-  max-width: 90%;
+  max-width: 85%;
+  align-self: center;
 }
 .ppm .ppm--features .PPM-img {
   align-self: center;
@@ -1248,6 +1253,9 @@ header .underline-indicators > .active > a::after, header .underline-indicators 
 @media (min-width: 600px) {
   .ppm .ppm--features {
     width: 80%;
+  }
+  .ppm .ppm--features > h2 {
+    align-self: center;
   }
 }
 
@@ -1268,7 +1276,7 @@ header .underline-indicators > .active > a::after, header .underline-indicators 
     align-items: flex-start;
   }
   .web-portfolio .portfolio-comparisons h2 {
-    margin-left: 3rem;
+    margin-left: 8%;
   }
 }
 .web-portfolio .portfolio-comparisons p {
@@ -1328,7 +1336,7 @@ header .underline-indicators > .active > a::after, header .underline-indicators 
     align-items: flex-start;
   }
   .web-portfolio .portfolio-conclusion h2 {
-    margin-left: 3rem;
+    margin-left: 8%;
   }
 }
 .web-portfolio .portfolio-conclusion p {
