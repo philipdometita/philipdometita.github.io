@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Philip Dometita">
+        <meta name="description" content="Save and manage recipes in the Recipe Book app">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap&family=Sofia+Sans+Condensed:wght@200..900&display=swap" 
+            rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
+        >
+        <noscript>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap&family=Sofia+Sans+Condensed:wght@200..900&display=swap"
+                rel="stylesheet"
+                type="text/css"
+            >
+        </noscript>
+        <link rel="stylesheet" href="../../build/index-min.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <title>Philip Dometita | Recipe Book</title>
+        <script src="./js/header.js" defer></script>
+        <script src="./js/footer.js" defer></script>
+        <script src="./js/nav.js" defer></script>
+    </head>
+    <body>
+        <!-- ************************************************* change css back to min -->
+        <!-- header contained within header.js  -->
+        <main class="everdeck project-page flex">
+            <!-- Title, picture, and main description section -->
+            <section class="project-title flex">
+                <div class="flex">
+                    <img src="../../assets/everdeck/everdeck-clam.svg" class="project-title-img" alt="Clam image from the everdeck card">
+                    <h1 class="fs-700 ff-sans-normal text-black">Everdeck Library</h1>
+                </div>
+                <p class="fs-400 ff-sans-normal project-description">
+                    A web app for archiving and searching through the games playable by the Everdeck. The app was built 
+                    by a three person team in Next.js with a MongoDB backend and deployed on Vercel. Using the app, 
+                    you can use searches or filters to find a game you want to play and find the rules and card mappings 
+                    for that game. The app can be found at <a href="everdeck-library.vercel.app" aria-label="Everdeck Library link">everdeck-library.vercel.app</a>.
+                    If you want more information about the Everdeck, check out the about page of our app <a href="everdeck-library.vercel.app/about"  aria-label="Everdeck Library about page link">here</a>.
+                </p>
+            </section>
+            <!-- project features section -->
+            <section class="everdeck--features flow flex">
+                <h2 class="fs-600 ff-sans-normal text-black">Features</h2>
+                <p class="fs-400 ff-sans-normal">
+                    A card system to display basic information for the game on the main page of the app.
+                </p>
+                <picture>
+                    <source srcset="../../assets/everdeck/cardExample.webp" type="image/webp" />
+                    <img src="../../assets/everdeck/cardExample.png" alt="box with game title, description, basic stats, and warning icon">
+                </picture>
+                <p class="fs-400 ff-sans-normal">
+                    The card contains the game's title, a short description, stats (player count, play time, and complexity), and a warning 
+                    icon if the game has any warnings. The card also contains the game's box art if the user is on a bigger screen.
+                </p>
+
+                <div class="divider"></div>
+
+                <h3 class="fs-500 ff-sans-normal text-black">Search and Filter</h3>
+                <p class="fs-400 ff-sans-normal">
+                    If you know the name of the game you want to play, you can use the search bar at the top of the 
+                    main page. You can also sort the games currently on the main page in ascending or descending
+                    order by using the buttons located below the search bar. 
+                </p>
+                <div class="flex everdeck-filters">
+                    <div class="everdeck-filters--p flex">
+                        <p class="fs-400 ff-sans-normal">
+                            If you know some of the qualities of a game you want to play but don't know the exact game (ex. a game for 4 players), you
+                            can use the filter menu. 
+                        </p>
+                        <p class="fs-400 ff-sans-normal">
+                            The filter menu has sliders to choose the minimum and maximum values for player count, play time, and complexity.
+                        </p>
+                        <p class="fs-400 ff-sans-normal">
+                            There is a dropdown to choose a mapping strength of a game which represents how well the game maps to the Everdeck.
+                            There are 4 options: "Perfect", "High", "Low", and "Any". (More information on mapping strength can be found on the "How To" on the
+                            Everdeck Library app which can be accessed by clicking the "?" button on the bottom left of the page)
+                        </p>
+                        <p class="fs-400 ff-sans-normal">
+                            Checkboxes are provided to choose external components (things in addition to the Everdeck that a game requires to play. ex. Dice)
+                            and game types.
+                        </p>
+                    </div>
+                    <picture>
+                        <source srcset="../../assets/everdeck/filterMenu.webp" type="image/webp" />
+                        <img src="../../assets/everdeck/filterMenu.png" alt="menu with filters of game attributes">
+                    </picture>
+                </div>
+                <div class="divider"></div>
+                <h3 class="fs-500 ff-sans-normal text-black">Rules Page</h3>
+                <p class="fs-400 ff-sans-normal">
+                    (In Progress)
+                </p>
+            </section>
+            <div class="project-github--link flex">
+                <p class="fs-400 ff-sans-normal">Check out the project, installation instructions, and its source code on github:</p>
+                <a 
+                    href="https://github.com/ItsBurpee/EverdeckLibrary" 
+                    target="_blank"
+                    aria-label="everdeck github link"
+                >
+                    <img src="../assets/general/github-svgrepo-com.svg" alt="github icon">
+                    <h3 class="sr-only">Github Link</h3>
+                </a>
+            </div>
+        </main>
+        <!-- footer contained within footer.js  -->
+    </body>
+</html>

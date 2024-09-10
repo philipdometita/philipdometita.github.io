@@ -12,6 +12,7 @@
 @use "./projects/recipeBook.scss";
 @use "./projects/ppm.scss";
 @use "./projects/web-portfolio.scss";
+@use "./projects/everdeck.scss";
 @use "./frontendmentor/splitter.scss";
 @use "./frontendmentor/frontendmentor.scss";
 
@@ -26,6 +27,7 @@
     --clr-light: 33 36% 76%;
     --clr-white: 0 0% 100%;
     --clr-gold: 39 51% 50%;
+    --clr-edblue: 209 95% 60%;
 
     /* font sizes */
     --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);

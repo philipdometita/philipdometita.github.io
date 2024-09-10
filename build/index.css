@@ -304,7 +304,6 @@ select {
   .project {
     width: 45%;
     margin: 1rem;
-    grid-template-areas: "thumb thumb title title" "desc desc desc desc";
   }
 }
 @media (min-width: 1200px) {
@@ -397,7 +396,6 @@ select {
   grid-area: desc;
 }
 .project img, .project picture {
-  height: 100%;
   width: 100%;
   border-radius: 0.5rem;
 }
@@ -749,12 +747,20 @@ select {
     flex-wrap: wrap;
   }
 }
+.projects .project img {
+  height: 15rem;
+  width: 15rem;
+}
 .projects .project.projects--recipe-book img {
   background-color: hsl(var(--clr-gold)/1);
   padding: 1rem;
 }
 .projects .project.projects--portfolio img {
   background-color: hsl(var(--clr-dark)/1);
+  padding: 1rem;
+}
+.projects .project.projects--everdeck img {
+  background-color: hsl(var(--clr-edblue)/1);
   padding: 1rem;
 }
 
@@ -955,6 +961,13 @@ header .primary-navigation .dropdown .fem-dropdown-content .active {
     transform: rotateX(-90deg);
     background-color: hsl(var(--clr-dark)/1);
   }
+  header .primary-navigation .dropdown .project-dropdown-content .project-dropdown-4,
+  header .primary-navigation .dropdown .fem-dropdown-content .project-dropdown-4 {
+    transform-origin: top center;
+    opacity: 0;
+    transform: rotateX(-90deg);
+    background-color: hsl(var(--clr-dark)/1);
+  }
   header .primary-navigation .dropdown .project-dropdown-content .fem-dropdown-1,
   header .primary-navigation .dropdown .fem-dropdown-content .fem-dropdown-1 {
     transform-origin: top center;
@@ -998,6 +1011,12 @@ header .primary-navigation .dropdown .fem-dropdown-content a:hover {
   header .primary-navigation .dropdown:hover .project-dropdown-content .project-dropdown-3, header .primary-navigation .dropdown:focus-within .project-dropdown-content .project-dropdown-3 {
     transition: all 390ms ease-in-out;
     transition-delay: 330ms;
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  header .primary-navigation .dropdown:hover .project-dropdown-content .project-dropdown-4, header .primary-navigation .dropdown:focus-within .project-dropdown-content .project-dropdown-4 {
+    transition: all 390ms ease-in-out;
+    transition-delay: 440ms;
     transform: rotateX(0deg);
     opacity: 1;
   }
@@ -1342,6 +1361,60 @@ header .underline-indicators > .active > a::after, header .underline-indicators 
 .web-portfolio .portfolio-conclusion p {
   max-width: 85%;
   align-self: center;
+}
+
+.everdeck .project-title img {
+  background-color: hsl(var(--clr-edblue)/1);
+}
+.everdeck .everdeck--features {
+  flex-direction: column;
+  align-items: center;
+  --flow-space: 1.5rem;
+}
+.everdeck .everdeck--features > p {
+  max-width: 90%;
+}
+.everdeck .everdeck--features .everdeck-filters {
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+.everdeck .everdeck--features .everdeck-filters img {
+  max-height: 50%;
+  width: 100%;
+}
+.everdeck .everdeck--features .everdeck-filters .everdeck-filters--p {
+  max-width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+.everdeck .everdeck--features .everdeck-filters .everdeck-filters--p p {
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .everdeck .everdeck--features > p, .everdeck .everdeck--features .everdeck-filters {
+    max-width: 70%;
+  }
+  .everdeck .everdeck--features > h2 {
+    align-self: center;
+  }
+}
+@media (min-width: 992px) {
+  .everdeck .everdeck--features {
+    max-width: 80%;
+  }
+  .everdeck .everdeck--features .everdeck-filters {
+    margin-top: 3rem;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+  .everdeck .everdeck--features .everdeck-filters img {
+    max-height: 100%;
+  }
+  .everdeck .everdeck--features .everdeck-filters .everdeck-filters--p {
+    max-width: 60%;
+  }
 }
 
 :root {
@@ -1705,6 +1778,7 @@ input[type=number] {
   --clr-light: 33 36% 76%;
   --clr-white: 0 0% 100%;
   --clr-gold: 39 51% 50%;
+  --clr-edblue: 209 95% 60%;
   /* font sizes */
   --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
   --fs-800: 3.5rem;

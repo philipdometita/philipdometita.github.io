@@ -74,6 +74,13 @@ const header = `
                         >
                             Web Portfolio
                         </a>
+                        <a 
+                            class="fs-400 ff-sans-cond project-dropdown-4" 
+                            href="/src/everdeck.html"
+                            aria-label="Go to everdeck library project page"
+                        >
+                            Everdeck Library
+                        </a>
                     </div>
                 </li>
                 <li id="femNav" class="dropdown flex ${femActiveClass}">

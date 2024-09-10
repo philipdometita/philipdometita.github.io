@@ -261,9 +261,6 @@
     @media (min-width:b.$layout-breakpoint-laptop) {
         width: 45%;
         margin: 1rem;
-        grid-template-areas: 
-            "thumb thumb title title"
-            "desc desc desc desc";
     }
 
     @media (min-width: b.$layout-breakpoint-desktop) {
@@ -372,7 +369,6 @@
 
     // general styles for project thumbnails
     img, picture {
-        height: 100%;
         width: 100%;
         border-radius: .5rem;
     }

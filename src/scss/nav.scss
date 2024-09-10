@@ -105,7 +105,7 @@ header {
                     min-width: 100%;
                     z-index: 100; 
 
-                    @for $i from 1 through 3 {
+                    @for $i from 1 through 4 {
                         .project-dropdown-#{$i} {
                             transform-origin: top center;
                             opacity: 0;
@@ -139,7 +139,7 @@ header {
             @media (min-width: b.$layout-breakpoint-laptop) {
                 &:hover, &:focus-within {
                     .project-dropdown-content {
-                        @for $i from 1 through 3 {
+                        @for $i from 1 through 4 {
                             .project-dropdown-#{$i} {
                                 transition: all 390ms ease-in-out;
                                 transition-delay: $i * 110ms;

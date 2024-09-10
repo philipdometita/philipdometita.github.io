@@ -57,6 +57,10 @@
     }
 
     .project {
+        & img {
+            height: 15rem;
+            width: 15rem;
+        }
         &.projects--recipe-book {
             img {
                 background-color: hsl(var(--clr-gold) / 1);
@@ -67,6 +71,13 @@
         &.projects--portfolio {
             img {
                 background-color: hsl(var(--clr-dark) / 1);
+                padding: 1rem;
+            }
+        }
+
+        &.projects--everdeck {
+            img {
+                background-color: hsl(var(--clr-edblue) / 1);
                 padding: 1rem;
             }
         }
