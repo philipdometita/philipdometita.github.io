@@ -31,7 +31,6 @@
         <script src="./js/nav.js" defer></script>
     </head>
     <body>
-        <!-- ************************************************* change css back to min -->
         <!-- header contained within header.js  -->
         <main class="everdeck project-page flex">
             <!-- Title, picture, and main description section -->
@@ -56,7 +55,7 @@
                 </p>
                 <picture>
                     <source srcset="../../assets/everdeck/cardExample.webp" type="image/webp" />
-                    <img src="../../assets/everdeck/cardExample.png" alt="box with game title, description, basic stats, and warning icon">
+                    <img src="../../assets/everdeck/cardExample.png" alt="box with game title, description, basic stats, and warning icon"/>
                 </picture>
                 <p class="fs-400 ff-sans-normal">
                     The card contains the game's title, a short description, stats (player count, play time, and complexity), and a warning 
@@ -92,17 +91,56 @@
                     </div>
                     <picture>
                         <source srcset="../../assets/everdeck/filterMenu.webp" type="image/webp" />
-                        <img src="../../assets/everdeck/filterMenu.png" alt="menu with filters of game attributes">
+                        <img src="../../assets/everdeck/filterMenu.png" alt="menu with filters of game attributes"/>
                     </picture>
                 </div>
                 <div class="divider"></div>
                 <h3 class="fs-500 ff-sans-normal text-black">Rules Page</h3>
                 <p class="fs-400 ff-sans-normal">
-                    (In Progress)
+                    Once you have found a game you are interested in, you can click or tap on the card 
+                    to go to that game's rule page. At the top of the page you can find the game's box art, the basic stats
+                    of the game (that are visible on the card), a longer summary of the game, and a link to the BoardGameGeek page for 
+                    the game. Depending on the device you are using to use the app, there should be buttons you can use to jump to the 
+                    various sections of the rules page.  
+                </p>
+                <p class="fs-400 ff-sans-normal">
+                    If the game has any warnings, more details of the warnings can be found below the summary. 
+                    Below any warnings will be the rules section, which contains the rules of the game.
+                </p>
+                <p class="fs-400 ff-sans-normal">
+                    The rules section consists of two parts: the card zones and the rules.
+                </p>
+                <div class="everdeck-cardzones flex">
+                    <div class="everdeck-cardzones--p flex">
+                        <p class="fs-400 ff-sans-normal">
+                            Each game can have one or more types of cards. For example, the game Uno has normal coloured number cards and
+                            wild cards. The game For Sale that is used in the example image has property and currency cards. 
+                            The card zone shows which part of an Everdeck card is used to indentify the game card it maps to.
+                        </p>
+                        <p class="fs-400 ff-sans-normal">
+                            Hovering or tapping on a card zone will highlight the section of the card that is relevant to the card zone
+                        </p>
+                        <p class="fs-400 ff-sans-normal">
+                            You may have noticed that some of the words in the rules stand out. These are key words of the game's rules
+                            that are relevant to the game's card zones. Hovering the key words will also highlight the card zone and vice versa.
+                            If you are on a mobile device, tapping a keyword will jump back to the card zone section so the user can see the 
+                            highlight since having both the rules and the card zone on screen at the same time is not feasible on smaller screens.
+                        </p>
+                    </div>
+                    <picture>
+                        <source srcset="../../assets/everdeck/cardZoneEx.webp" type="image/webp" />
+                        <img 
+                            src="../../assets/everdeck/cardZoneEx.png" 
+                            alt="Everdeck card with boxes describing card zones underneath the card. the number of the card is highlighted"
+                        />
+                    </picture>
+                </div>
+                <p class="fs-400 ff-sans-normal">
+                    (in Progress)
                 </p>
             </section>
             <div class="project-github--link flex">
-                <p class="fs-400 ff-sans-normal">Check out the project, installation instructions, and its source code on github:</p>
+                <p class="fs-400 ff-sans-normal">Check out the app <a href="everdeck-library.vercel.app" aria-label="Everdeck Library link">here</a> and its source code on github:</p>
                 <a 
                     href="https://github.com/ItsBurpee/EverdeckLibrary" 
                     target="_blank"

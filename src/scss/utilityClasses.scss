@@ -173,7 +173,7 @@
     justify-content: center;
     width: 100%;
 
-    a {
+    & > a {
         position: relative;
         width: 20%;
         margin-top: 1rem;
@@ -206,14 +206,14 @@
     @media (min-width: b.$layout-breakpoint-tablet) {
         flex-direction: row;
 
-        a {
+        & > a {
             margin: 0 0 0 2rem;
             width: 10%;
         }
     }
 
     @media (min-width: b.$layout-breakpoint-laptop) {
-        a {
+        & > a {
             width: 6%;
         }
     }
