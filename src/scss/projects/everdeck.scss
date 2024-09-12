@@ -44,10 +44,17 @@
             }
         }
 
+        .everdeck-table {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
         @media (min-width: b.$layout-breakpoint-tablet) {
             & > p, 
             .everdeck-filters,
-            .everdeck-cardzones {
+            .everdeck-cardzones,
+            .everdeck-table {
                 max-width: 70%;
             }
 
@@ -76,6 +83,13 @@
                 }
                 .everdeck-cardzones--p {
                     max-width: 60%;
+                }
+            }
+            .everdeck-table {
+                flex-direction: row-reverse;
+                justify-content: center;
+                & > p {
+                    max-width: 40%;
                 }
             }
         }

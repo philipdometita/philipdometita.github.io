@@ -218,7 +218,7 @@ select {
 }
 @media (min-width: 992px) {
   .project-title .project-description {
-    max-width: 80%;
+    max-width: 70%;
   }
 }
 
@@ -1402,10 +1402,16 @@ header .underline-indicators > .active > a::after, header .underline-indicators 
   align-items: center;
   max-width: 90%;
 }
+.everdeck .everdeck--features .everdeck-table {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 @media (min-width: 600px) {
   .everdeck .everdeck--features > p,
   .everdeck .everdeck--features .everdeck-filters,
-  .everdeck .everdeck--features .everdeck-cardzones {
+  .everdeck .everdeck--features .everdeck-cardzones,
+  .everdeck .everdeck--features .everdeck-table {
     max-width: 70%;
   }
   .everdeck .everdeck--features > h2 {
@@ -1436,6 +1442,13 @@ header .underline-indicators > .active > a::after, header .underline-indicators 
   }
   .everdeck .everdeck--features .everdeck-cardzones .everdeck-cardzones--p {
     max-width: 60%;
+  }
+  .everdeck .everdeck--features .everdeck-table {
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  .everdeck .everdeck--features .everdeck-table > p {
+    max-width: 40%;
   }
 }
 
